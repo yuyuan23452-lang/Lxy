@@ -1,0 +1,4 @@
+interface:
+  display_name: "抖店草稿发布"
+  short_description: "根据主图判断信息和规格，批量编辑并发布抖店商品草稿"
+  default_prompt: "Use $doudian-draft-publisher to edit and publish the remaining Douyin Shop product drafts in Chrome."

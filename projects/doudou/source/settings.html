@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="color-scheme" content="light" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' pet: data:; media-src 'self' pet: blob:; script-src 'self'; style-src 'self'; connect-src 'self'"
+    />
+    <title>豆豆桌宠设置</title>
+    <link rel="stylesheet" href="settings.css" />
+  </head>
+  <body>
+    <main class="settings-shell">
+      <aside class="settings-sidebar">
+        <div class="role-heading">
+          <img id="role-avatar" src="assets/doudou-icon.png" alt="" />
+          <div>
+            <strong id="role-name">加载中</strong>
+            <span>角色设置</span>
+          </div>
+        </div>
+        <nav id="settings-nav" aria-label="设置栏目">
+          <button class="nav-item" data-panel="roles">角色管理</button>
+          <button class="nav-item" data-panel="appearance">外观与大小</button>
+          <button class="nav-item is-active" data-panel="skills">技能库</button>
+          <button class="nav-item" data-panel="opening">开场方案</button>
+          <button class="nav-item" data-panel="gestures">手势绑定</button>
+          <button class="nav-item" data-panel="voice">语音与声音</button>
+          <button class="nav-item" data-panel="camera">摄像头和麦克风</button>
+          <button class="nav-item" data-panel="rules">固定规则</button>
+          <button class="nav-item" data-panel="random">随机行为</button>
+          <button class="nav-item" data-panel="general">通用设置</button>
+        </nav>
+        <div class="storage-note">所有导入素材只保存在本机</div>
+      </aside>
+
+      <section class="settings-content">
+        <header class="content-header">
+          <div>
+            <p class="eyebrow">DOUDOU DESKTOP COMPANION</p>
+            <h1 id="panel-title">技能库</h1>
+          </div>
+          <span id="save-status" class="save-status">配置已保存</span>
+        </header>
+
+        <section class="panel" data-panel-content="roles" hidden>
+          <div class="character-toolbar">
+            <div>
+              <p class="card-kicker">本机角色库</p>
+              <h2>创建和管理角色</h2>
+              <p>每个角色拥有独立的主图、待机状态、大小、技能和规则。角色主图必须是透明 PNG。</p>
+            </div>
+            <div class="toolbar-actions">
+              <button id="import-character-package-button" class="secondary-button" type="button">导入角色包</button>
+              <button id="create-character-button" class="primary-button" type="button">创建角色</button>
+            </div>
+          </div>
+          <div class="character-library-summary">
+            <span id="character-count">1 / 30 个角色</span>
+            <span>角色包只包含图片、视频、音频和配置，不包含可执行代码。</span>
+          </div>
+          <div id="character-groups" class="character-groups"></div>
+        </section>
+
+        <section class="panel" data-panel-content="appearance" hidden>
+          <div class="setting-card appearance-card">
+            <div>
+              <p class="card-kicker">当前角色</p>
+              <h2 id="appearance-size-title">当前角色的桌面尺寸</h2>
+              <p id="appearance-size-description">拖动进度条时桌面上的角色会立即变化，尺寸会自动记住。</p>
+            </div>
+            <div class="scale-control">
+              <input id="scale-slider" type="range" min="60" max="140" step="1" value="100" />
+              <output id="scale-output" for="scale-slider">100%</output>
+            </div>
+            <div class="scale-labels"><span>更小</span><span>默认</span><span>更大</span></div>
+          </div>
+          <div class="setting-card startup-state-card">
+            <div>
+              <p class="card-kicker">启动后的状态</p>
+              <h2 id="startup-state-title">选择当前角色平时怎样待机</h2>
+              <p>技能、无互动循环或隐藏时会暂停待机动画，恢复普通状态后继续。</p>
+            </div>
+            <div class="startup-state-options">
+              <label>
+                <input type="radio" name="startup-state" value="static" checked />
+                <span><strong>静止状态</strong><small>使用当前角色的静止图片。</small></span>
+              </label>
+              <label>
+                <input type="radio" name="startup-state" value="standard-idle" />
+                <span><strong>标准待机状态</strong><small>循环播放技能库里的“标准待机”动画。</small></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel is-active" data-panel-content="skills">
+          <div class="skills-toolbar">
+            <div>
+              <h2>当前角色技能</h2>
+              <p>透明角色动画使用WebM，局部场景使用MP4或WebM。</p>
+            </div>
+            <div class="toolbar-actions">
+              <button id="restore-skills-button" class="secondary-button" type="button" hidden>恢复内置技能</button>
+              <button id="import-skill-button" class="primary-button" type="button">＋ 导入技能素材</button>
+            </div>
+          </div>
+          <div id="skill-summary" class="skill-summary"></div>
+          <div id="skill-list" class="skill-list" aria-live="polite"></div>
+        </section>
+
+        <section class="panel" data-panel-content="opening" hidden>
+          <div class="skills-toolbar opening-toolbar">
+            <div>
+              <h2>开场方案管理器</h2>
+              <p>只使用本地透明WebM视频；不启动摄像头，不加入等待、文字对白或权限询问。</p>
+            </div>
+            <div class="toolbar-actions">
+              <label class="opening-startup-switch"><input id="opening-play-on-startup" type="checkbox" /> 每次启动播放</label>
+              <button id="create-opening-plan" class="primary-button" type="button">＋ 新建方案</button>
+            </div>
+          </div>
+          <div class="opening-layout">
+            <aside class="opening-plan-sidebar">
+              <div class="opening-column-heading"><strong>已保存方案</strong><small>可保存多套</small></div>
+              <div id="opening-plan-list" class="opening-plan-list"></div>
+            </aside>
+            <div id="opening-empty" class="opening-empty">
+              <span class="placeholder-icon">开</span>
+              <h2>还没有开场方案</h2>
+              <p>先新建一个方案，再导入一段完整开场视频；以后也可以加入多段并拖动排序。</p>
+              <button id="opening-empty-create" class="primary-button" type="button">新建第一个方案</button>
+            </div>
+            <section id="opening-detail" class="opening-detail" hidden>
+              <header class="opening-detail-header">
+                <div>
+                  <p class="card-kicker">当前编辑方案</p>
+                  <h2 id="opening-plan-name">开场方案</h2>
+                  <p id="opening-plan-summary">0个片段</p>
+                </div>
+                <div class="opening-plan-actions">
+                  <label><input id="opening-current-plan" type="radio" name="current-opening-plan" /> 设为当前</label>
+                  <label><input id="opening-plan-enabled" type="checkbox" /> 启用方案</label>
+                  <button id="rename-opening-plan" class="secondary-button" type="button">改名</button>
+                  <button id="duplicate-opening-plan" class="secondary-button" type="button">复制</button>
+                  <button id="delete-opening-plan" class="secondary-button danger-button" type="button">删除</button>
+                </div>
+              </header>
+              <div class="opening-preview-wrap">
+                <div class="opening-preview-stage">
+                  <div id="opening-preview-canvas" class="opening-preview-canvas">
+                    <img id="opening-plan-reference" src="assets/dog.png" alt="" />
+                    <video id="opening-preview" playsinline></video>
+                  </div>
+                  <span id="opening-preview-empty">选择片段或预览整套方案</span>
+                </div>
+                <div class="preview-timeline opening-preview-timeline">
+                  <input id="opening-preview-seek" type="range" min="0" max="1000" step="1" value="0" disabled aria-label="开场预览播放进度" />
+                  <span id="opening-preview-time">00:00.0 / 00:00.0</span>
+                </div>
+                <div class="opening-preview-controls">
+                  <button id="preview-opening-plan" class="secondary-button" type="button">播放整套方案</button>
+                  <button id="toggle-opening-preview" class="secondary-button" type="button" disabled>暂停预览</button>
+                  <button id="stop-opening-preview" class="secondary-button" type="button" disabled>停止预览</button>
+                  <span id="opening-preview-status">预览不会影响桌面上的角色</span>
+                  <button id="add-opening-segment" class="primary-button" type="button">＋ 导入WebM片段</button>
+                </div>
+              </div>
+              <div class="opening-column-heading segment-heading"><strong>片段顺序</strong><small>按住卡片拖动即可排序</small></div>
+              <div id="opening-segment-list" class="opening-segment-list"></div>
+            </section>
+          </div>
+        </section>
+        <section class="panel" data-panel-content="gestures" hidden>
+          <div class="placeholder-card"><span class="placeholder-icon">势</span><h2>手势绑定</h2><p>后续可把挥手、比心、竖拇指、握拳和张开手掌绑定到一个或多个技能。</p></div>
+        </section>
+        <section class="panel" data-panel-content="voice" hidden>
+          <div class="placeholder-card"><span class="placeholder-icon">声</span><h2>语音与声音</h2><p id="voice-placeholder-description">后续将在这里管理使用当前角色名称唤醒的语音指令，以及可导入的角色声音。</p></div>
+        </section>
+        <section class="panel" data-panel-content="camera" hidden>
+          <div class="placeholder-card"><span class="placeholder-icon">镜</span><h2>摄像头和麦克风</h2><p>已预留正式识别、测试页面以及可选摄像头预览窗口的设置位置。</p></div>
+        </section>
+        <section class="panel" data-panel-content="rules" hidden>
+          <div class="setting-card rule-card">
+            <div class="rule-heading">
+              <div>
+                <p id="inactivity-rule-role" class="card-kicker">当前角色 · 未命名角色</p>
+                <h2>通用无互动状态流程</h2>
+                <p>点击、拖动或鼠标接触角色会重置计时；普通键盘和鼠标工作不算互动。宠物可以睡觉，人物可以休息，其他角色也可以使用自己的循环状态。</p>
+              </div>
+              <label class="rule-master-switch">
+                <input id="auto-sleep-enabled" type="checkbox" checked />
+                <span>启用规则</span>
+              </label>
+            </div>
+
+            <div id="auto-sleep-fields" class="rule-fields">
+              <label class="rule-range-field inactivity-delay-field">
+                <span>没有互动 <output id="auto-sleep-seconds-output" for="auto-sleep-seconds">30 秒</output></span>
+                <span class="number-input-suffix">
+                  <input id="auto-sleep-seconds" type="number" min="5" max="3600" step="1" value="30" inputmode="numeric" />
+                  <span>秒</span>
+                </span>
+                <small><span>最短5秒</span><span>最长3600秒（60分钟）</span></small>
+              </label>
+
+              <div class="rule-select-grid">
+                <label class="rule-skill-field">
+                  <span>进入动画（可选）</span>
+                  <span><select id="auto-sleep-enter-skill"></select><button type="button" data-calibrate-inactivity="enter">校准</button></span>
+                </label>
+                <label class="rule-skill-field">
+                  <span>循环状态动画（必选）</span>
+                  <span><select id="auto-sleep-loop-skill"></select><button type="button" data-calibrate-inactivity="loop">校准</button></span>
+                </label>
+                <label class="rule-skill-field">
+                  <span>恢复动画（可选）</span>
+                  <span><select id="auto-sleep-wake-skill"></select><button type="button" data-calibrate-inactivity="recover">校准</button></span>
+                </label>
+                <label>恢复后状态<select disabled><option>当前角色的普通待机</option></select></label>
+              </div>
+
+              <label class="rule-check-row">
+                <input id="auto-sleep-wake-pointer" type="checkbox" checked />
+                <span><strong>鼠标碰到无互动状态中的角色时恢复</strong><small>播放恢复动画；没有设置恢复动画时淡入普通待机。</small></span>
+              </label>
+
+              <div class="state-anchor-note">
+                <span class="anchor-mark" aria-hidden="true"></span>
+                <span><strong>统一锚点：角色底部中心</strong><small>三段透明动画固定使用同一舞台、同一缩放坐标和底部中心锚点。点击“校准”可对照普通待机调整每段动画的大小与位置。</small></span>
+              </div>
+              <button id="test-inactivity-flow" class="secondary-button" type="button">在桌面测试完整流程</button>
+            </div>
+
+            <div class="rule-flow" aria-label="通用无互动状态流程">
+              <span id="rule-flow-delay">30 秒无互动</span><i>→</i>
+              <span id="rule-flow-enter">进入动画</span><i>→</i>
+              <span id="rule-flow-loop">循环状态</span><i>→</i>
+              <span id="rule-flow-wake">鼠标碰到：恢复动画</span><i>→</i>
+              <span>普通待机</span>
+            </div>
+            <p id="auto-sleep-rule-status" class="rule-status">修改后自动保存到当前角色档案。</p>
+          </div>
+
+          <div class="setting-card future-rules-card">
+            <div>
+              <p class="card-kicker">后续扩展</p>
+              <h2>自然语言固定规则</h2>
+              <p>之后可以填写“工作40分钟后提醒我休息”“每天下午3点伸懒腰”等内容，并在系统理解结果确认后保存。</p>
+            </div>
+            <button class="secondary-button" type="button" disabled>稍后开放</button>
+          </div>
+        </section>
+        <section class="panel" data-panel-content="random" hidden>
+          <div id="random-rule-card" class="setting-card rule-card">
+            <div class="rule-heading">
+              <div>
+                <p id="random-rule-role" class="card-kicker">当前角色 · 未命名角色</p>
+                <h2>无互动时偶尔活动</h2>
+                <p id="random-rule-description">当前角色仍然优先按照无互动规则进入循环状态。开启后，它会偶尔恢复并表演一个选中的技能，完成后返回循环状态。</p>
+              </div>
+              <label class="rule-master-switch">
+                <input id="random-enabled" type="checkbox" />
+                <span>启用规则</span>
+              </label>
+            </div>
+
+            <div id="random-fields" class="rule-fields">
+              <label class="rule-range-field">
+                <span>平均间隔 <output id="random-interval-output" for="random-interval">20 分钟</output></span>
+                <input id="random-interval" type="range" min="5" max="60" step="1" value="20" />
+                <small><span>5 分钟</span><span>60 分钟</span></small>
+              </label>
+
+              <div class="random-explanation">
+                <strong>实际时间会自然浮动</strong>
+                <span id="random-window-text">设置20分钟时，会在约14～26分钟之间触发。</span>
+              </div>
+
+              <div>
+                <div class="random-skill-heading">
+                  <strong>允许随机播放的技能</strong>
+                  <small>每次只播放一个；普通待机、进入、循环和恢复动画不会出现在这里。</small>
+                </div>
+                <div id="random-skill-list" class="random-skill-list"></div>
+              </div>
+            </div>
+
+            <div class="rule-flow" aria-label="随机行为流程">
+              <span>进入无互动状态</span><i>→</i>
+              <span id="random-flow-delay">约14～26分钟</span><i>→</i>
+              <span>恢复</span><i>→</i>
+              <span id="random-flow-skill">随机播放1个技能</span><i>→</i>
+              <span>返回无互动状态</span>
+            </div>
+            <div class="random-rule-footer">
+              <p id="random-rule-status" class="rule-status">随机行为默认关闭，修改后自动保存。</p>
+              <button id="delete-random-rule" class="secondary-button danger-button" type="button">删除规则</button>
+            </div>
+          </div>
+
+          <div id="random-rule-empty" class="placeholder-card compact-placeholder" hidden>
+            <span class="placeholder-icon">随</span>
+            <h2>随机行为规则已删除</h2>
+            <p>当前角色只会按照无互动规则运行，不会自行恢复并表演技能。需要时可以恢复默认规则。</p>
+            <button id="restore-random-rule" class="primary-button" type="button">恢复默认规则</button>
+          </div>
+        </section>
+        <section class="panel" data-panel-content="general" hidden>
+          <div class="placeholder-card"><span class="placeholder-icon">通</span><h2>通用设置</h2><p>后续加入开机启动、通知、数据目录和隐私状态等通用选项。</p></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="character-dialog" class="character-dialog">
+      <form id="character-form" method="dialog">
+        <header>
+          <div>
+            <p id="character-dialog-kicker" class="card-kicker">角色管理</p>
+            <h2 id="character-dialog-title">创建新角色</h2>
+          </div>
+          <button class="icon-button" value="cancel" aria-label="关闭">×</button>
+        </header>
+        <div class="character-dialog-body">
+          <div class="character-preview-column">
+            <div class="character-preview-stage">
+              <img id="character-image-preview" alt="角色主图预览" hidden />
+              <video id="character-idle-preview" muted loop playsinline hidden></video>
+              <div id="character-preview-empty" class="preview-empty">选择透明 PNG 后在这里预览</div>
+            </div>
+            <p class="character-preview-tip">预览只用于确认素材和大致尺寸，保存后可在“外观与大小”和技能编辑中继续校准。</p>
+          </div>
+          <div class="character-form-fields">
+            <label>
+              <span>角色分类</span>
+              <select id="character-category" required>
+                <option value="pet">宠物</option>
+                <option value="person">人物</option>
+                <option value="other">其他</option>
+              </select>
+            </label>
+            <label>
+              <span>角色名称</span>
+              <input id="character-name" maxlength="40" autocomplete="off" required />
+            </label>
+            <div class="character-material-field">
+              <div>
+                <strong>角色主图</strong>
+                <small id="character-image-status">必须选择带透明通道的 PNG</small>
+              </div>
+              <button id="choose-character-image" class="secondary-button" type="button">选择透明 PNG</button>
+            </div>
+            <fieldset class="character-idle-options">
+              <legend>初始待机状态</legend>
+              <label>
+                <input type="radio" name="character-idle-mode" value="static" checked />
+                <span><strong>静止图片</strong><small>立即可用，直接显示透明 PNG。</small></span>
+              </label>
+              <label>
+                <input type="radio" name="character-idle-mode" value="animated" />
+                <span><strong>透明待机动画</strong><small>循环播放你导入的透明 WebM。</small></span>
+              </label>
+            </fieldset>
+            <div id="character-idle-material" class="character-material-field" hidden>
+              <div>
+                <strong>待机动画</strong>
+                <small id="character-idle-status">选择透明 WebM</small>
+              </div>
+              <button id="choose-character-idle" class="secondary-button" type="button">选择 WebM</button>
+            </div>
+            <label class="character-scale-field">
+              <span>角色大小 <output id="character-scale-output" for="character-scale">100%</output></span>
+              <input id="character-scale" type="range" min="60" max="140" step="1" value="100" />
+            </label>
+          </div>
+        </div>
+        <p id="character-dialog-error" class="dialog-error" hidden></p>
+        <footer>
+          <button class="secondary-button" value="cancel">取消</button>
+          <button id="save-character-button" class="primary-button" value="default">保存角色</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="skill-dialog" class="skill-dialog">
+      <form id="skill-form" method="dialog">
+        <header>
+          <div>
+            <p class="card-kicker" id="dialog-kicker">导入本地素材</p>
+            <h2 id="dialog-title">新技能</h2>
+          </div>
+          <button class="icon-button" value="cancel" aria-label="关闭">×</button>
+        </header>
+        <div class="dialog-body">
+          <div class="preview-column">
+            <div id="calibration-stage" class="preview-box calibration-stage">
+              <img id="skill-reference" class="skill-reference" src="assets/dog.png" alt="" />
+              <video id="skill-preview" muted loop playsinline></video>
+              <div id="preview-empty" class="preview-empty">选择素材后在这里预览</div>
+            </div>
+            <div class="preview-timeline">
+              <input id="preview-seek" type="range" min="0" max="1000" step="1" value="0" disabled aria-label="预览播放进度" />
+              <span id="preview-time">00:00.0 / 00:00.0</span>
+            </div>
+          </div>
+          <div class="form-grid">
+            <label>技能名称<input id="skill-name" maxlength="40" required /></label>
+            <label>技能分类<select id="skill-category" required></select></label>
+            <label>素材类型<select id="skill-type"><option value="transparent">透明角色动画</option><option value="scene">局部场景视频</option></select></label>
+            <div class="toggle-row"><label><input id="skill-pinned" type="checkbox" /> 固定到常用技能</label><label><input id="skill-muted" type="checkbox" checked /> 默认静音</label></div>
+            <div class="preview-legend" aria-hidden="true">
+              <span><i class="legend-reference"></i>标准角色</span>
+              <span><i class="legend-skill"></i>当前技能</span>
+            </div>
+          </div>
+          <fieldset id="visual-calibration" class="visual-calibration">
+            <legend>技能画面校准</legend>
+            <p id="calibration-help">半透明角色是标准大小；拖动滑块，让技能中的角色与它接近。</p>
+            <label>
+              <span>播放大小 <span class="calibration-number"><input id="skill-scale-number" type="number" min="40" max="180" step="1" value="100" aria-label="播放大小数值" /><i>%</i></span></span>
+              <input id="skill-scale" type="range" min="40" max="180" step="1" value="100" />
+            </label>
+            <label>
+              <span>水平位置 <span class="calibration-number"><input id="skill-offset-x-number" type="number" min="-160" max="160" step="1" value="0" aria-label="水平位置数值" /></span></span>
+              <input id="skill-offset-x" type="range" min="-160" max="160" step="1" value="0" />
+            </label>
+            <label>
+              <span>垂直位置 <span class="calibration-number"><input id="skill-offset-y-number" type="number" min="-160" max="160" step="1" value="0" aria-label="垂直位置数值" /></span></span>
+              <input id="skill-offset-y" type="range" min="-160" max="160" step="1" value="0" />
+            </label>
+            <div class="calibration-actions">
+              <button id="pause-preview-button" type="button" class="secondary-button">暂停预览</button>
+              <button id="auto-match-button" type="button" class="secondary-button">自动匹配大小</button>
+              <button id="reset-visual-button" type="button" class="secondary-button">恢复默认</button>
+            </div>
+            <p id="calibration-status" class="calibration-status" aria-live="polite"></p>
+          </fieldset>
+        </div>
+        <p id="dialog-error" class="dialog-error" hidden></p>
+        <footer>
+          <button class="secondary-button" value="cancel">取消</button>
+          <button id="save-skill-button" class="primary-button" value="default">保存技能</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="opening-segment-dialog" class="skill-dialog opening-segment-dialog">
+      <form id="opening-segment-form" method="dialog">
+        <header>
+          <div>
+            <p class="card-kicker">开场片段校准</p>
+            <h2 id="opening-segment-dialog-title">编辑开场动画</h2>
+          </div>
+          <button class="icon-button" value="cancel" aria-label="关闭">×</button>
+        </header>
+        <div class="dialog-body">
+          <div class="preview-column">
+            <div id="opening-calibration-stage" class="preview-box calibration-stage opening-calibration-stage">
+              <div id="opening-calibration-canvas" class="opening-calibration-canvas">
+                <img id="opening-reference" class="skill-reference" src="assets/dog.png" alt="" />
+                <video id="opening-edit-preview" playsinline></video>
+              </div>
+              <div class="preview-legend" aria-hidden="true">
+                <span><i class="legend-reference"></i>待机角色</span>
+                <span><i class="legend-skill"></i>开场动画</span>
+              </div>
+            </div>
+            <div class="preview-timeline">
+              <input id="opening-edit-seek" type="range" min="0" max="1000" step="1" value="0" disabled aria-label="开场片段播放进度" />
+              <span id="opening-edit-time">00:00.0 / 00:00.0</span>
+            </div>
+          </div>
+          <div class="opening-editor-fields">
+            <div class="form-grid">
+              <label>片段名称<input id="opening-segment-name" maxlength="40" required /></label>
+              <div class="toggle-row">
+                <label><input id="opening-segment-enabled" type="checkbox" /> 在方案中播放</label>
+                <label><input id="opening-segment-muted" type="checkbox" /> 静音播放</label>
+              </div>
+            </div>
+            <fieldset class="visual-calibration">
+              <legend>开场画面校准</legend>
+              <p>把进度拖到最后的衔接画面，再点击“末帧自动对齐”，让开场结束时与待机角色的位置和大小一致。</p>
+              <label>
+                <span>播放大小 <output id="opening-scale-output">100%</output></span>
+                <input id="opening-scale" type="range" min="40" max="180" step="1" value="100" />
+              </label>
+              <label>
+                <span>水平位置 <output id="opening-offset-x-output">0</output></span>
+                <input id="opening-offset-x" type="range" min="-160" max="160" step="1" value="0" />
+              </label>
+              <label>
+                <span>垂直位置 <output id="opening-offset-y-output">0</output></span>
+                <input id="opening-offset-y" type="range" min="-160" max="160" step="1" value="0" />
+              </label>
+              <div class="calibration-actions">
+                <button id="toggle-opening-edit-preview" type="button" class="secondary-button">暂停预览</button>
+                <button id="match-opening-end" type="button" class="secondary-button">末帧自动对齐</button>
+                <button id="reset-opening-visual" type="button" class="secondary-button">恢复默认</button>
+              </div>
+              <p id="opening-calibration-status" class="calibration-status" aria-live="polite"></p>
+            </fieldset>
+          </div>
+        </div>
+        <p id="opening-segment-dialog-error" class="dialog-error" hidden></p>
+        <footer>
+          <button class="secondary-button" value="cancel">取消</button>
+          <button id="save-opening-segment" class="primary-button" value="default">保存片段设置</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="text-prompt-dialog" class="text-prompt-dialog">
+      <form id="text-prompt-form">
+        <header>
+          <p class="card-kicker">开场方案</p>
+          <h2 id="text-prompt-title">输入名称</h2>
+        </header>
+        <label>
+          <span id="text-prompt-label">名称</span>
+          <input id="text-prompt-input" maxlength="40" autocomplete="off" required />
+        </label>
+        <p id="text-prompt-error" class="text-prompt-error" hidden></p>
+        <footer>
+          <button id="text-prompt-cancel" class="secondary-button" type="button">取消</button>
+          <button id="text-prompt-confirm" class="primary-button" type="submit">确定</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="confirm-dialog" class="text-prompt-dialog">
+      <form id="confirm-form">
+        <header>
+          <p class="card-kicker">请确认操作</p>
+          <h2 id="confirm-title">确认删除</h2>
+        </header>
+        <p id="confirm-message" class="confirm-message"></p>
+        <footer>
+          <button id="confirm-cancel" class="secondary-button" type="button">取消</button>
+          <button id="confirm-submit" class="danger-button" type="submit">确认删除</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <script src="settings.js"></script>
+  </body>
+</html>

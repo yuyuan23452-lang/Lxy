@@ -1,0 +1,4 @@
+interface:
+  display_name: "抖店草稿图文处理"
+  short_description: "自动处理抖店商品草稿主图详情图裁剪填入并保存草稿流程"
+  default_prompt: "Use $doudian-draft-graphics to process Douyin Shop product drafts with the saved graphics workflow."

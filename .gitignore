@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+__pycache__/
+*.pyc
+*.log
+*.exe
+*.zip
+projects/tfcc/desktop/content/*.mp4
+projects/tfcc/web/dist/*.mp4
+projects/tfcc/web/dist/*.png
+projects/tfcc/web/dist/server/
+projects/tfcc/build/
+projects/doudou/source/dist/
+**/user-data*/
+**/.DS_Store

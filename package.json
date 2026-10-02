@@ -1,0 +1,9 @@
+{
+  "name": "luxinyuan-ai-project-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio packaging and optional Doudian browser dependencies",
+  "devDependencies": {
+    "playwright-core": "1.61.0"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "doudou-desktop-pet",
+  "version": "0.8.13",
+  "private": true,
+  "description": "豆豆桌面宠物：独立角色库、透明技能、睡眠与随机行为、可编排开场方案和托盘生命周期。",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "check": "node --check character-store.js && node --check character-package.js && node --check inactivity-flow.js && node --check main.js && node --check preload.js && node --check renderer.js && node --check settings-preload.js && node --check settings.js",
+    "test:characters": "node --test character-store.test.js character-package.test.js inactivity-flow.test.js",
+    "qa:input": "electron . --input-qa",
+    "qa:prototype": "electron . --prototype-qa",
+    "build:win": "electron-builder --win portable --x64"
+  },
+  "dependencies": {
+    "adm-zip": "0.5.16"
+  },
+  "devDependencies": {
+    "electron": "37.2.6",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.doudou.desktoppet",
+    "productName": "豆豆桌宠",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "character-store.js",
+      "character-package.js",
+      "inactivity-flow.js",
+      "preload.js",
+      "renderer.js",
+      "settings-preload.js",
+      "settings.js",
+      "index.html",
+      "settings.html",
+      "styles.css",
+      "settings.css",
+      "assets/dog.png",
+      "assets/skills.json",
+      "assets/doudou.ico",
+      "assets/doudou-icon.png",
+      "assets/media/**/*"
+    ],
+    "win": {
+      "icon": "assets/doudou.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "豆豆桌宠-${version}-Windows-x64.${ext}"
+    }
+  }
+}

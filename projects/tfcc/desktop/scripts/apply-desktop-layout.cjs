@@ -1,0 +1,11 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const root = path.join(__dirname, '..');
+const baseline = fs.readFileSync(path.join(root, 'ui', 'baseline-v6.html'));
+if (crypto.createHash('sha256').update(baseline).digest('hex') !== '22231877f6c1ee17cd69993303e2ed53b4b9060748db18b0b029836859233530') throw new Error('v6 内容底稿校验失败');
+const html = require('./desktop-document.cjs')(baseline.toString('utf8'));
+fs.writeFileSync(path.join(root, 'content', 'index.html'), html);
+for (const name of ['desktop.css', 'desktop.js']) fs.copyFileSync(path.join(root, 'ui', name), path.join(root, 'content', name));
+console.log(`桌面布局 ${require('../package.json').version} 已生成；同步新免责声明，保留其余 v6 正文及动画，使用单动作播放。`);

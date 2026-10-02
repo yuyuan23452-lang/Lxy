@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "roleId": "doudou",
+  "roleName": "豆豆",
+  "standardPose": {
+    "image": "assets/dog.png",
+    "transitionMs": 220,
+    "holdMs": 160
+  },
+  "behavior": {
+    "autoSleepEnabled": true,
+    "inactivitySleepMs": 30000,
+    "sleepEnterSkillId": "sleep-enter",
+    "sleepLoopSkillId": "sleep-loop",
+    "wakeSkillId": "wake-up",
+    "wakeOnPointer": true
+  },
+  "categories": [
+    { "id": "daily", "name": "日常动作", "order": 10 },
+    { "id": "scene", "name": "场景动作", "order": 20 },
+    { "id": "sound", "name": "声音动作", "order": 30 },
+    { "id": "interaction", "name": "互动技能", "order": 40 },
+    { "id": "person", "name": "人物技能", "order": 50 }
+  ],
+  "skills": [
+    {
+      "id": "idle-breath",
+      "name": "标准待机",
+      "category": "daily",
+      "type": "transparent",
+      "source": "assets/media/doudou-idle.webm",
+      "durationMs": 3933,
+      "muted": true,
+      "pinned": false,
+      "transition": "standard",
+      "visual": { "scale": 0.86, "offsetX": 0, "offsetY": 1 }
+    },
+    {
+      "id": "spin",
+      "name": "原地转圈",
+      "category": "daily",
+      "type": "transparent",
+      "source": "assets/media/doudou-spin.webm",
+      "durationMs": 5066,
+      "muted": true,
+      "pinned": true,
+      "transition": "standard",
+      "visual": { "scale": 1.24, "offsetX": 0, "offsetY": 0 }
+    },
+    {
+      "id": "sleep-enter",
+      "name": "进入睡眠",
+      "category": "daily",
+      "type": "transparent",
+      "source": "assets/media/doudou-sleep-enter.webm",
+      "durationMs": 5066,
+      "muted": true,
+      "pinned": false,
+      "transition": "standard",
+      "visual": { "scale": 1.07, "offsetX": 0, "offsetY": 38 }
+    },
+    {
+      "id": "sleep-loop",
+      "name": "睡觉呼吸",
+      "category": "daily",
+      "type": "transparent",
+      "source": "assets/media/doudou-sleep-loop.webm",
+      "durationMs": 5066,
+      "muted": true,
+      "pinned": false,
+      "transition": "standard",
+      "visual": { "scale": 1.07, "offsetX": 0, "offsetY": 38 }
+    },
+    {
+      "id": "wake-up",
+      "name": "醒来",
+      "category": "daily",
+      "type": "transparent",
+      "source": "assets/media/doudou-wake.webm",
+      "durationMs": 4066,
+      "muted": true,
+      "pinned": false,
+      "transition": "standard",
+      "visual": { "scale": 1.07, "offsetX": 0, "offsetY": 38 }
+    },
+    {
+      "id": "grass",
+      "name": "滚草地",
+      "category": "scene",
+      "type": "scene",
+      "source": "assets/media/doudou-grass.mp4",
+      "durationMs": 5056,
+      "muted": false,
+      "pinned": false,
+      "transition": "scene-fade",
+      "visual": { "scale": 1, "offsetX": 0, "offsetY": 0 }
+    }
+  ]
+}

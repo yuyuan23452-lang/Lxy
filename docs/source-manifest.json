@@ -1,0 +1,765 @@
+[
+  {
+    "file": "skills/doudian-draft-graphics/SKILL.md",
+    "original_bytes": 5339,
+    "original_sha256": "5f8ea4009e5dc7a44198ef6959cab56cfb6d0ad16143f06b55977e4385c3d967",
+    "export_sha256": "057532ff3e9a1809dee26eaed5d39911ddfa9af352904cd181688578d046c4bb",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/doudian-draft-graphics/agents/openai.yaml",
+    "original_bytes": 280,
+    "original_sha256": "9c71cbe4f28a895a2a2838824e9fac3cfabdb933a94261cc772b798418050b72",
+    "export_sha256": "9c71cbe4f28a895a2a2838824e9fac3cfabdb933a94261cc772b798418050b72",
+    "modified_in_export": false
+  },
+  {
+    "file": "skills/doudian-draft-graphics/scripts/inspect-draft-pages.mjs",
+    "original_bytes": 3661,
+    "original_sha256": "d15bc8a72bfc3dffba3ce2e7b17c027cd874a0796980662c8f160fce1e04b618",
+    "export_sha256": "48f200d9d6f03248d3212fdeabc4145f140544347bdef9d608a0b30e653cd0e4",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/doudian-draft-graphics/scripts/open-next-unprocessed-draft.mjs",
+    "original_bytes": 5199,
+    "original_sha256": "e77c360078dc95f512f5cbde88c4640dee571fc19f2628995f6035b077e1f309",
+    "export_sha256": "801259342b3f31df02b7fb33861de034f306edc1f0e276817376bfd3089d146a",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/doudian-draft-graphics/scripts/process-current-graphics-new-flow.mjs",
+    "original_bytes": 19174,
+    "original_sha256": "47397ea43a1aa21ddba50730fbdfa18ac159a16c2a417ac9a135878d225db38c",
+    "export_sha256": "a8e146c257039cecc3c1acbad76cba81466d2e81fc02f46c9dba08f340cd2c18",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/doudian-draft-graphics/scripts/run-remaining-new-flow.ps1",
+    "original_bytes": 3579,
+    "original_sha256": "63df4be97b2424573045355aea7ebdbd94c8d4219b182b7b141ebde7381a53dc",
+    "export_sha256": "7c4a1c04023697d7421d87f7faf27859fc3d4af235d4e7da238a85339b0ffe4b",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/doudian-draft-publisher/SKILL.md",
+    "original_bytes": 2557,
+    "original_sha256": "9080e8957f97c951d64bdd044c81111120daf8d7a7bfb82c83340f5c60a3b48f",
+    "export_sha256": "7da974fd02c44e6ee71f567f914ea3205fe5aeac2e7fb52714b12cab2523cca7",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/doudian-draft-publisher/agents/openai.yaml",
+    "original_bytes": 272,
+    "original_sha256": "1959d1d21096092e397e62746eaa5b40bb028b96c542a5a4acfb7942d99692b7",
+    "export_sha256": "1959d1d21096092e397e62746eaa5b40bb028b96c542a5a4acfb7942d99692b7",
+    "modified_in_export": false
+  },
+  {
+    "file": "skills/doudian-draft-publisher/references/workflow.md",
+    "original_bytes": 6297,
+    "original_sha256": "852a66c598e808b9de1901f42b32ff8f5e5c9c86b49d55836b56d9d7a706e8ed",
+    "export_sha256": "b240739d68b7f62301f2a28d26668bcb2e3d00d5f7a31e1f214c5dfd7acf0c92",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/desktop-character-pack-factory/SKILL.md",
+    "original_bytes": 5628,
+    "original_sha256": "91143ad243952c3ff06b0cd6775c7b404fe136524e512b3b2c0e038a0ec55776",
+    "export_sha256": "4db0921e90a30af9855513ecdc6040a1f6e5c173ecb2fb71ae71dfd240a0c29d",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/desktop-character-pack-factory/agents/openai.yaml",
+    "original_bytes": 298,
+    "original_sha256": "f89a6b7902b43e28b58e79bf816c9e1235c6165458ccc2e51d7ac7b36ed43a45",
+    "export_sha256": "f89a6b7902b43e28b58e79bf816c9e1235c6165458ccc2e51d7ac7b36ed43a45",
+    "modified_in_export": false
+  },
+  {
+    "file": "skills/desktop-character-pack-factory/references/animation-planning.md",
+    "original_bytes": 3619,
+    "original_sha256": "dbd79ecc2c7c434f955537a9a366279013ed433d223259299ef0dc83005b77a5",
+    "export_sha256": "fc3d41d5071126b1fdcfa1f0f4292427304c68668a94721694e63b543daf463c",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/desktop-character-pack-factory/references/image-standards.md",
+    "original_bytes": 2214,
+    "original_sha256": "f45bfbaecd10a0f60ab1671bb24b441736d21c99c1842df293f8f6d8f5e36976",
+    "export_sha256": "2de78073ce0fa15da6ae36ef99372731852b387e7f150b4ff1cb7c130f6f1df8",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/desktop-character-pack-factory/scripts/inspect_images.py",
+    "original_bytes": 2664,
+    "original_sha256": "86a7af822b5125fcd4b4fce7bde9f87a83542aa2f44719c9d682286224db2fa8",
+    "export_sha256": "b77be174c98e56b17ed029054f630e2fb4f56cad17c8a65eab2b92d29718e9a6",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/desktop-character-pack-factory/scripts/make_green_reference.py",
+    "original_bytes": 1727,
+    "original_sha256": "cff18731ae34a11191919463c31cd004a58b57cf7873eaf3d3228bc81b7c4c11",
+    "export_sha256": "6846c1c4208142c0748438e95b6a830a91a5cdaa7454ea70449a497a5a3799ef",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/desktop-character-pack-factory/scripts/normalize_reference.py",
+    "original_bytes": 1324,
+    "original_sha256": "b6f15bc282777e94c259d33504aa59bc405dad31483d1c5b3e1ab51a9555bc8f",
+    "export_sha256": "f93c6529fa942b139f655b8b34e4110c8480740e0c605c89e4633a8dd9e1b75e",
+    "modified_in_export": true
+  },
+  {
+    "file": "skills/desktop-character-pack-factory/scripts/prepare_project.py",
+    "original_bytes": 3126,
+    "original_sha256": "ca8a24fc025b27dd832c2dd72c4e63e803cc7019dbec2054d39b20f060bcb55f",
+    "export_sha256": "d150a7a21669655c28f81b549f9ea693b4fb8909f72a43bbcf739f9a13292975",
+    "modified_in_export": true
+  },
+  {
+    "file": "projects/doudou/source/main.js",
+    "original_bytes": 176733,
+    "original_sha256": "894a33efc2ef15b2a7b9d27a43b41e2acd600cc5bcc96b04af5cf614cb976149",
+    "export_sha256": "894a33efc2ef15b2a7b9d27a43b41e2acd600cc5bcc96b04af5cf614cb976149",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/preload.js",
+    "original_bytes": 2145,
+    "original_sha256": "44df06ff068fa8a387d0c7aaaff5828f13a20a7963442cad955989045e0c6b0b",
+    "export_sha256": "44df06ff068fa8a387d0c7aaaff5828f13a20a7963442cad955989045e0c6b0b",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/renderer.js",
+    "original_bytes": 52833,
+    "original_sha256": "d4f037991e53ba60f1f49e3bc5d37ef54e370c0a9999fd9a11a315159491e22f",
+    "export_sha256": "d4f037991e53ba60f1f49e3bc5d37ef54e370c0a9999fd9a11a315159491e22f",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/index.html",
+    "original_bytes": 3286,
+    "original_sha256": "fd7dd6f1b5fdbf4f1a2b2c7bcd0556713703f3046467cfc7f702a11c30db22f4",
+    "export_sha256": "fd7dd6f1b5fdbf4f1a2b2c7bcd0556713703f3046467cfc7f702a11c30db22f4",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/styles.css",
+    "original_bytes": 6465,
+    "original_sha256": "7b441f4493059cfbc4017f521c2a611f44138b884764503f9f73d8357c40f9db",
+    "export_sha256": "7b441f4493059cfbc4017f521c2a611f44138b884764503f9f73d8357c40f9db",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/settings.html",
+    "original_bytes": 31069,
+    "original_sha256": "8229754e7c56a90f2328400405346349379f1e4476091238b7e73897e930e490",
+    "export_sha256": "8229754e7c56a90f2328400405346349379f1e4476091238b7e73897e930e490",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/settings.js",
+    "original_bytes": 103580,
+    "original_sha256": "815ba424cf406dbf2a66e5fd64fa74c0478adcd3785da024d1f2bbb5007fafee",
+    "export_sha256": "815ba424cf406dbf2a66e5fd64fa74c0478adcd3785da024d1f2bbb5007fafee",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/settings.css",
+    "original_bytes": 32916,
+    "original_sha256": "ced3ffdb885487e1c23a8b08d4b7eb94db92917d5b7753c8b2b27dceaaac64e2",
+    "export_sha256": "ced3ffdb885487e1c23a8b08d4b7eb94db92917d5b7753c8b2b27dceaaac64e2",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/settings-preload.js",
+    "original_bytes": 3860,
+    "original_sha256": "39a60ffed7743ada12aec5434ef1b3538f281a99c658f246f78e624c551b1ee4",
+    "export_sha256": "39a60ffed7743ada12aec5434ef1b3538f281a99c658f246f78e624c551b1ee4",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/character-store.js",
+    "original_bytes": 9735,
+    "original_sha256": "5476105ce1a9cf1e550792a0e14aa121b163459f44109061d3cd879f261c3fa7",
+    "export_sha256": "5476105ce1a9cf1e550792a0e14aa121b163459f44109061d3cd879f261c3fa7",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/character-store.test.js",
+    "original_bytes": 5939,
+    "original_sha256": "f63ea37998fa10513685d0777cbfc25a86ebb524b97adf2b7a52cc05f0324a09",
+    "export_sha256": "f63ea37998fa10513685d0777cbfc25a86ebb524b97adf2b7a52cc05f0324a09",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/character-package.js",
+    "original_bytes": 8757,
+    "original_sha256": "fda3deb7a5cc889e7a5f2578350df67e11fa8104c59df8be9e3568030cff7245",
+    "export_sha256": "fda3deb7a5cc889e7a5f2578350df67e11fa8104c59df8be9e3568030cff7245",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/character-package.test.js",
+    "original_bytes": 2598,
+    "original_sha256": "a3490459774fa6c83a57b833f8883b84da753a8f13406380834ba4a47270ffa7",
+    "export_sha256": "a3490459774fa6c83a57b833f8883b84da753a8f13406380834ba4a47270ffa7",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/inactivity-flow.js",
+    "original_bytes": 2801,
+    "original_sha256": "ed3f718dc8cf32b701a3bb2f07123d25f85d9fb34ca7b8940ea7b6bb49c2daf6",
+    "export_sha256": "ed3f718dc8cf32b701a3bb2f07123d25f85d9fb34ca7b8940ea7b6bb49c2daf6",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/inactivity-flow.test.js",
+    "original_bytes": 1701,
+    "original_sha256": "d168c767baaa239f2c0182e75c8b2aec890e7b28d70ae241af31fb9484c328bb",
+    "export_sha256": "d168c767baaa239f2c0182e75c8b2aec890e7b28d70ae241af31fb9484c328bb",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/package.json",
+    "original_bytes": 1828,
+    "original_sha256": "d6663341c7a5104e5f176df3faf7a8dd88ea74343f1a91b5f66ab2b31077a510",
+    "export_sha256": "d6663341c7a5104e5f176df3faf7a8dd88ea74343f1a91b5f66ab2b31077a510",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/pnpm-lock.yaml",
+    "original_bytes": 69472,
+    "original_sha256": "5a86da778f37d8a0847a9ce60725f14e1d49c5deaa4801b46cc1803fbb5df357",
+    "export_sha256": "5a86da778f37d8a0847a9ce60725f14e1d49c5deaa4801b46cc1803fbb5df357",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/pnpm-workspace.yaml",
+    "original_bytes": 95,
+    "original_sha256": "040a7a4867347a2d3155a430f4178af909b14018fe4e783ce44e2cd419571a15",
+    "export_sha256": "040a7a4867347a2d3155a430f4178af909b14018fe4e783ce44e2cd419571a15",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-blink.png",
+    "original_bytes": 1143685,
+    "original_sha256": "b3a65bd2c2f6194416ee2a9e6231a52c8d77b55121611660931e684ab29dc648",
+    "export_sha256": "b3a65bd2c2f6194416ee2a9e6231a52c8d77b55121611660931e684ab29dc648",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-comfort.png",
+    "original_bytes": 1041271,
+    "original_sha256": "a0560f85d0cf3bf712aec3f4daf51c0bc5856738d75014c9395445590372b0b4",
+    "export_sha256": "a0560f85d0cf3bf712aec3f4daf51c0bc5856738d75014c9395445590372b0b4",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-dance.png",
+    "original_bytes": 1044236,
+    "original_sha256": "53ac57bb46732ed983afca79a3bed367dd3052ad67da3590cfdd5e0b4d97c664",
+    "export_sha256": "53ac57bb46732ed983afca79a3bed367dd3052ad67da3590cfdd5e0b4d97c664",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-eat.png",
+    "original_bytes": 998931,
+    "original_sha256": "ec0aff08340fb5f09165ea098379bcd448832eb0b2c0c644d1750732d722599b",
+    "export_sha256": "ec0aff08340fb5f09165ea098379bcd448832eb0b2c0c644d1750732d722599b",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-listen.png",
+    "original_bytes": 1034323,
+    "original_sha256": "e0b860b23936de6673d920099e6a7f28034f245c4017bcc147009df5d8e06060",
+    "export_sha256": "e0b860b23936de6673d920099e6a7f28034f245c4017bcc147009df5d8e06060",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-love.png",
+    "original_bytes": 1020537,
+    "original_sha256": "7d0d98b742476de148f395d0419a0e4174e2199e6b6ecd25dff3be98a061928e",
+    "export_sha256": "7d0d98b742476de148f395d0419a0e4174e2199e6b6ecd25dff3be98a061928e",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-play.png",
+    "original_bytes": 1195468,
+    "original_sha256": "5be99859444b3d462e708197884cf952a8f5314f1454d889ba6c5616ca354e56",
+    "export_sha256": "5be99859444b3d462e708197884cf952a8f5314f1454d889ba6c5616ca354e56",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-proud.png",
+    "original_bytes": 1395998,
+    "original_sha256": "4b6291cf297e67fd0331ffb4e88b59fd16098cec583d1459f92fccd22300c220",
+    "export_sha256": "4b6291cf297e67fd0331ffb4e88b59fd16098cec583d1459f92fccd22300c220",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-ready.png",
+    "original_bytes": 1072160,
+    "original_sha256": "09ea59f851f39c5c1ff23d700968acf5311b7626b8f48d366a37b5bcf320f858",
+    "export_sha256": "09ea59f851f39c5c1ff23d700968acf5311b7626b8f48d366a37b5bcf320f858",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-sit.png",
+    "original_bytes": 1004820,
+    "original_sha256": "966816ad4bf02c21bd48e546e6bab90869028422844baa7c8d65c0e5928bfcbb",
+    "export_sha256": "966816ad4bf02c21bd48e546e6bab90869028422844baa7c8d65c0e5928bfcbb",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-sleep-green-square.png",
+    "original_bytes": 1188279,
+    "original_sha256": "69ee2df84337a75477c4927a3004118203b7ab801ce7825f3b2b3e8b1e20f5f8",
+    "export_sha256": "69ee2df84337a75477c4927a3004118203b7ab801ce7825f3b2b3e8b1e20f5f8",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-sleep-loop-green-square.png",
+    "original_bytes": 465255,
+    "original_sha256": "329ad0ef3a5396958f19d9372a53a7f9b141efa5c121cef61b6dbd3f9c336432",
+    "export_sha256": "329ad0ef3a5396958f19d9372a53a7f9b141efa5c121cef61b6dbd3f9c336432",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-sleep.png",
+    "original_bytes": 1191801,
+    "original_sha256": "2b544a7b6d2084435565a34ae3170e2c58121a6fd746fb039551145c2273624f",
+    "export_sha256": "2b544a7b6d2084435565a34ae3170e2c58121a6fd746fb039551145c2273624f",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-stand-green-key.png",
+    "original_bytes": 1278546,
+    "original_sha256": "bdb1fcd26cb2dc0973071134ddddc82702c45503046f926fe01fa84cfc132665",
+    "export_sha256": "bdb1fcd26cb2dc0973071134ddddc82702c45503046f926fe01fa84cfc132665",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-stand-green-square.png",
+    "original_bytes": 1281366,
+    "original_sha256": "38ce92868a241e422a5c6def33776831946e7ee9a1cf8d94a28e2ef9e8cd68e5",
+    "export_sha256": "38ce92868a241e422a5c6def33776831946e7ee9a1cf8d94a28e2ef9e8cd68e5",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-surprised.png",
+    "original_bytes": 1292314,
+    "original_sha256": "cee7811bacb6df19b2b28b401420d94622baa338c7d05666488a8c09dba8363a",
+    "export_sha256": "cee7811bacb6df19b2b28b401420d94622baa338c7d05666488a8c09dba8363a",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-tickle-green-square.png",
+    "original_bytes": 813260,
+    "original_sha256": "ec4668ba52d78770be06ee8314cf4b1c1f775aab732c9f55f8f9f0fad669c48e",
+    "export_sha256": "ec4668ba52d78770be06ee8314cf4b1c1f775aab732c9f55f8f9f0fad669c48e",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-tickle.png",
+    "original_bytes": 1130573,
+    "original_sha256": "ce6f68ced43dd7c5847091b92d87c32f037b8cc9fb4ac86e23dd223fa0a28e82",
+    "export_sha256": "ce6f68ced43dd7c5847091b92d87c32f037b8cc9fb4ac86e23dd223fa0a28e82",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-v2.png",
+    "original_bytes": 1269479,
+    "original_sha256": "b86927eb458d2714d47896004b6d2f35231fa93f667971e9a5889e38599b74eb",
+    "export_sha256": "b86927eb458d2714d47896004b6d2f35231fa93f667971e9a5889e38599b74eb",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-victory.png",
+    "original_bytes": 1098577,
+    "original_sha256": "bd436ef1afbae74239555191e64aaabb9a9fc76d7cf47bdf44be7d5e0a387d42",
+    "export_sha256": "bd436ef1afbae74239555191e64aaabb9a9fc76d7cf47bdf44be7d5e0a387d42",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog-wave.png",
+    "original_bytes": 1127457,
+    "original_sha256": "12baea31bc1e761ed07f9cbe668e3496d86621a2406ff17ad6abda67a7a3e862",
+    "export_sha256": "12baea31bc1e761ed07f9cbe668e3496d86621a2406ff17ad6abda67a7a3e862",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/dog.png",
+    "original_bytes": 1280473,
+    "original_sha256": "bef229aa7ad99a2713319766455bf6820ee9324a2eb3025802ac9ca5c304c5c7",
+    "export_sha256": "bef229aa7ad99a2713319766455bf6820ee9324a2eb3025802ac9ca5c304c5c7",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/doudou-icon.png",
+    "original_bytes": 381883,
+    "original_sha256": "d872a336b54979c6d9970e3bafbf21ec6cb7fe1b1aea6bf65fd6a0b70f877ae3",
+    "export_sha256": "d872a336b54979c6d9970e3bafbf21ec6cb7fe1b1aea6bf65fd6a0b70f877ae3",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/doudou-sleep-enter-end-green-aligned.png",
+    "original_bytes": 1532718,
+    "original_sha256": "9f425eddd619de90b508bc1404164282b11e374ee124f1c61ca11010fa07d1a7",
+    "export_sha256": "9f425eddd619de90b508bc1404164282b11e374ee124f1c61ca11010fa07d1a7",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/doudou-wake-end-green.png",
+    "original_bytes": 627093,
+    "original_sha256": "b0a1b2c273f3451e47e11dfc7c9ba21e8b628dd6b8fc6abac090c7e84bf4986a",
+    "export_sha256": "b0a1b2c273f3451e47e11dfc7c9ba21e8b628dd6b8fc6abac090c7e84bf4986a",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/doudou-wake-start-green.png",
+    "original_bytes": 420713,
+    "original_sha256": "12c4465342be51ae2f6588214f99242f19a7615b31a76066785323a1d82af26c",
+    "export_sha256": "12c4465342be51ae2f6588214f99242f19a7615b31a76066785323a1d82af26c",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/doudou.ico",
+    "original_bytes": 110980,
+    "original_sha256": "f606dc17ea43719f1226e4dfdabdf321a4eab8fbbc3f5994d8c642a006935f25",
+    "export_sha256": "f606dc17ea43719f1226e4dfdabdf321a4eab8fbbc3f5994d8c642a006935f25",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/skills.json",
+    "original_bytes": 2750,
+    "original_sha256": "920f4a969f613cbc42532707b33d038c01b2620d757911ef273d99bd0d84fda9",
+    "export_sha256": "920f4a969f613cbc42532707b33d038c01b2620d757911ef273d99bd0d84fda9",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/吃饭.png",
+    "original_bytes": 1555396,
+    "original_sha256": "59319c4a572576d223e181bf5d0454c74ddd1bcb4314f648f59451e9c66448b5",
+    "export_sha256": "59319c4a572576d223e181bf5d0454c74ddd1bcb4314f648f59451e9c66448b5",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/media/doudou-grass.mp4",
+    "original_bytes": 4323905,
+    "original_sha256": "68205128fe5760f70d6416b1ea607d06234113fef3692f5ec3e04d9a0d3ffd33",
+    "export_sha256": "68205128fe5760f70d6416b1ea607d06234113fef3692f5ec3e04d9a0d3ffd33",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/media/doudou-idle.webm",
+    "original_bytes": 1103741,
+    "original_sha256": "704a33c6d6adb19fdd3e698d19e1a0455c82ad979445f9758d674dceae657a24",
+    "export_sha256": "704a33c6d6adb19fdd3e698d19e1a0455c82ad979445f9758d674dceae657a24",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/media/doudou-sleep-enter.webm",
+    "original_bytes": 1158208,
+    "original_sha256": "f77d76cdff75acec93a088119d9a28921a65d7a236ed190720bd192fc5ce2e86",
+    "export_sha256": "f77d76cdff75acec93a088119d9a28921a65d7a236ed190720bd192fc5ce2e86",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/media/doudou-sleep-loop.webm",
+    "original_bytes": 393824,
+    "original_sha256": "6b1c18c67c8d2697dcea4e059415c9430c891a893322a0c2573dda2ffbe89835",
+    "export_sha256": "6b1c18c67c8d2697dcea4e059415c9430c891a893322a0c2573dda2ffbe89835",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/media/doudou-spin.webm",
+    "original_bytes": 1675541,
+    "original_sha256": "8b5d3ed3055a2fc4310c9150d03e79271582596120edb4dda7fdf5396cc6ffd9",
+    "export_sha256": "8b5d3ed3055a2fc4310c9150d03e79271582596120edb4dda7fdf5396cc6ffd9",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/media/doudou-wake.webm",
+    "original_bytes": 899297,
+    "original_sha256": "155f93f4d4a03a9afc2a65358ea77ec549d20ff97451a6faf7f25f7a80651238",
+    "export_sha256": "155f93f4d4a03a9afc2a65358ea77ec549d20ff97451a6faf7f25f7a80651238",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/models/face_landmarker.task",
+    "original_bytes": 3758596,
+    "original_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+    "export_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/doudou/source/assets/models/gesture_recognizer.task",
+    "original_bytes": 8373440,
+    "original_sha256": "97952348cf6a6a4915c2ea1496b4b37ebabc50cbbf80571435643c455f2b0482",
+    "export_sha256": "97952348cf6a6a4915c2ea1496b4b37ebabc50cbbf80571435643c455f2b0482",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/main.cjs",
+    "original_bytes": 1453,
+    "original_sha256": "ba2268d845bf974d0b889b67fecad58543d3387055fb1dff57453e9bc67e38d2",
+    "export_sha256": "ba2268d845bf974d0b889b67fecad58543d3387055fb1dff57453e9bc67e38d2",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/package.json",
+    "original_bytes": 1213,
+    "original_sha256": "cf0520afc1058780497721564b6e4d666dca4e47f0d76964309a80ac5d45439d",
+    "export_sha256": "cf0520afc1058780497721564b6e4d666dca4e47f0d76964309a80ac5d45439d",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/pnpm-lock.yaml",
+    "original_bytes": 70481,
+    "original_sha256": "46c3002211121858cf2c57618f93ed0b7917d23db66dab467b5fd8e98bc2d150",
+    "export_sha256": "46c3002211121858cf2c57618f93ed0b7917d23db66dab467b5fd8e98bc2d150",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/pnpm-workspace.yaml",
+    "original_bytes": 58,
+    "original_sha256": "3dd22307dac49096d523474d8e299d33faf8e808311fa45c7fd893d7e59076b6",
+    "export_sha256": "3dd22307dac49096d523474d8e299d33faf8e808311fa45c7fd893d7e59076b6",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/assets/tfcc.ico",
+    "original_bytes": 47339,
+    "original_sha256": "97ce780ce58b47444245cecfc24e50355c1baba7d2fcf00efe39da78d9d4bd33",
+    "export_sha256": "97ce780ce58b47444245cecfc24e50355c1baba7d2fcf00efe39da78d9d4bd33",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/assets/tfcc.png",
+    "original_bytes": 22489,
+    "original_sha256": "669e4b5c098a6418b540564d1a2ae38b26ee5891fa5bb0f0a0df4d4075b9fe12",
+    "export_sha256": "669e4b5c098a6418b540564d1a2ae38b26ee5891fa5bb0f0a0df4d4075b9fe12",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/ui/action-transport.js",
+    "original_bytes": 5658,
+    "original_sha256": "257628df912a50ef0ff8fdbf918502c6eef00048bcd5d5727c53b59ff420f9b9",
+    "export_sha256": "257628df912a50ef0ff8fdbf918502c6eef00048bcd5d5727c53b59ff420f9b9",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/ui/baseline-v6.html",
+    "original_bytes": 55400,
+    "original_sha256": "22231877f6c1ee17cd69993303e2ed53b4b9060748db18b0b029836859233530",
+    "export_sha256": "22231877f6c1ee17cd69993303e2ed53b4b9060748db18b0b029836859233530",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/ui/desktop.css",
+    "original_bytes": 13192,
+    "original_sha256": "60bd851b10d9f952c6689a52facf8492e948907ea73d3bed52cf034634e7cef5",
+    "export_sha256": "60bd851b10d9f952c6689a52facf8492e948907ea73d3bed52cf034634e7cef5",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/ui/desktop.js",
+    "original_bytes": 8856,
+    "original_sha256": "8408a55f1c716a8bdb06fc0a47dffcb1076240964244aba928827cd11132d329",
+    "export_sha256": "8408a55f1c716a8bdb06fc0a47dffcb1076240964244aba928827cd11132d329",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/ui/disclaimer.txt",
+    "original_bytes": 366,
+    "original_sha256": "1054933d42101b99fcaef998c4b5a0198a50d75797d3580b93e90ac0a3555219",
+    "export_sha256": "1054933d42101b99fcaef998c4b5a0198a50d75797d3580b93e90ac0a3555219",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/scripts/apply-desktop-layout.cjs",
+    "original_bytes": 853,
+    "original_sha256": "cbf2f3335e22fc679a2f277ea1bedc2ff920bf3e13b65341c73e3ed781745a68",
+    "export_sha256": "cbf2f3335e22fc679a2f277ea1bedc2ff920bf3e13b65341c73e3ed781745a68",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/scripts/create-icon.py",
+    "original_bytes": 1376,
+    "original_sha256": "d41dcbc0667aacef018496f33f41a0138660df7c235560bc7ed96444c0064d1b",
+    "export_sha256": "d41dcbc0667aacef018496f33f41a0138660df7c235560bc7ed96444c0064d1b",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/scripts/desktop-document.cjs",
+    "original_bytes": 974,
+    "original_sha256": "cc11e85b1f627f8e320e7467e20f48597f80473d4c4bb4765022e67f180fa68a",
+    "export_sha256": "cc11e85b1f627f8e320e7467e20f48597f80473d4c4bb4765022e67f180fa68a",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/scripts/prepare-content.cjs",
+    "original_bytes": 1551,
+    "original_sha256": "e0ac756251ee06d4cdb3f7091650053c3aceed94359131cc665cbd8366c916fe",
+    "export_sha256": "3707e694b90b06cb7e9f975bc3090ad2793f88dd19cdaf239b3250140e1fa653",
+    "modified_in_export": true
+  },
+  {
+    "file": "projects/tfcc/desktop/scripts/smoke-actions.cjs",
+    "original_bytes": 4372,
+    "original_sha256": "754aaf7693a2822e0b1c8046bd5ceacba806b9a93c04198bfc88ae18f7037cd5",
+    "export_sha256": "754aaf7693a2822e0b1c8046bd5ceacba806b9a93c04198bfc88ae18f7037cd5",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/scripts/verify-content.cjs",
+    "original_bytes": 1879,
+    "original_sha256": "114c8547848ee2c5bd30df403e007bbaac32dbd98ce46bc2f61a2b636d348610",
+    "export_sha256": "114c8547848ee2c5bd30df403e007bbaac32dbd98ce46bc2f61a2b636d348610",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/content/desktop.css",
+    "original_bytes": 13192,
+    "original_sha256": "60bd851b10d9f952c6689a52facf8492e948907ea73d3bed52cf034634e7cef5",
+    "export_sha256": "60bd851b10d9f952c6689a52facf8492e948907ea73d3bed52cf034634e7cef5",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/content/desktop.js",
+    "original_bytes": 8856,
+    "original_sha256": "8408a55f1c716a8bdb06fc0a47dffcb1076240964244aba928827cd11132d329",
+    "export_sha256": "8408a55f1c716a8bdb06fc0a47dffcb1076240964244aba928827cd11132d329",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/content/index.html",
+    "original_bytes": 52608,
+    "original_sha256": "8bd1fa9ef5560df90607e01bd68fc4f9623717e392685c2c7960e971d35c7f04",
+    "export_sha256": "8bd1fa9ef5560df90607e01bd68fc4f9623717e392685c2c7960e971d35c7f04",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/content/phase-2-source-reference-1.png",
+    "original_bytes": 1962439,
+    "original_sha256": "a6020ab485bf06dd807b58e72c7caa0ed447b0f9b8643396c5f435958ff08661",
+    "export_sha256": "a6020ab485bf06dd807b58e72c7caa0ed447b0f9b8643396c5f435958ff08661",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/content/phase-2-source-reference-2.png",
+    "original_bytes": 1784985,
+    "original_sha256": "0ae19f1bbf5527820e097d8b57dbb78e579a3e67ff9454baeb52b773ed62a320",
+    "export_sha256": "0ae19f1bbf5527820e097d8b57dbb78e579a3e67ff9454baeb52b773ed62a320",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/content/phase-3-action-1-prep-v1.png",
+    "original_bytes": 1825494,
+    "original_sha256": "f5677a77ff15b0172c00165829038627588fa8f04905c86d27c0ad78bfd8f5ce",
+    "export_sha256": "f5677a77ff15b0172c00165829038627588fa8f04905c86d27c0ad78bfd8f5ce",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/desktop/content/phase-3-action-3-prep-v1.png",
+    "original_bytes": 1729984,
+    "original_sha256": "9c0dd6de6d4bbc8c6f97e51feabd5587ab7572d49013e79598e46615459a5216",
+    "export_sha256": "9c0dd6de6d4bbc8c6f97e51feabd5587ab7572d49013e79598e46615459a5216",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/web/build.cjs",
+    "original_bytes": 836,
+    "original_sha256": "70cb1a95230481310b918b6c3e0ca85e5b996c46007b1f6d22864b26f1fec830",
+    "export_sha256": "70cb1a95230481310b918b6c3e0ca85e5b996c46007b1f6d22864b26f1fec830",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/web/worker.mjs",
+    "original_bytes": 4621,
+    "original_sha256": "aff2a87f62a1ec2f936c126a1b238496614c94d9a5aa56589b7241361cb95061",
+    "export_sha256": "aff2a87f62a1ec2f936c126a1b238496614c94d9a5aa56589b7241361cb95061",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/web/package.json",
+    "original_bytes": 112,
+    "original_sha256": "7757678d5d98e78c4319dab418dd3d20110f7fbc025ed2b237659063f154e001",
+    "export_sha256": "7757678d5d98e78c4319dab418dd3d20110f7fbc025ed2b237659063f154e001",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/web/dist/index.html",
+    "original_bytes": 53576,
+    "original_sha256": "66ab63fb8984e18ab99285368e86db4c3addf64915661eb5f525797e793b6cb7",
+    "export_sha256": "66ab63fb8984e18ab99285368e86db4c3addf64915661eb5f525797e793b6cb7",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/web/dist/app.js",
+    "original_bytes": 14187,
+    "original_sha256": "68052003a321c16c0d002d478157ce2d043e9f6056a8ba3be7e41bc7356629a3",
+    "export_sha256": "68052003a321c16c0d002d478157ce2d043e9f6056a8ba3be7e41bc7356629a3",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/web/dist/base.css",
+    "original_bytes": 13192,
+    "original_sha256": "60bd851b10d9f952c6689a52facf8492e948907ea73d3bed52cf034634e7cef5",
+    "export_sha256": "60bd851b10d9f952c6689a52facf8492e948907ea73d3bed52cf034634e7cef5",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/tfcc/web/dist/mobile.css",
+    "original_bytes": 7282,
+    "original_sha256": "dae8467cd71cf01bbe51c2f1f6022f809b69bda85ac90f16a31e4c174cdc17c0",
+    "export_sha256": "dae8467cd71cf01bbe51c2f1f6022f809b69bda85ac90f16a31e4c174cdc17c0",
+    "modified_in_export": false
+  },
+  {
+    "file": "projects/christmas-tree/source/10.html",
+    "original_bytes": 27736,
+    "original_sha256": "d1367fe52da8ceeb4bbc989a55111067ec2fa0ff937a27dccc4718196e7d22e5",
+    "export_sha256": "d1367fe52da8ceeb4bbc989a55111067ec2fa0ff937a27dccc4718196e7d22e5",
+    "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/doudian-skill.png",
+    "original_bytes": 476479,
+    "original_sha256": "aa16b8b1623bb61c5f7feed471d8d4aeb80de13f7cf4ac5689068e26d428cd85",
+    "export_sha256": "aa16b8b1623bb61c5f7feed471d8d4aeb80de13f7cf4ac5689068e26d428cd85",
+    "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/doudian-workflow.png",
+    "original_bytes": 579373,
+    "original_sha256": "efe881aa48d7cc0da9fe2df96b76a4884bb389398d9b6530e65fcde66123d128",
+    "export_sha256": "efe881aa48d7cc0da9fe2df96b76a4884bb389398d9b6530e65fcde66123d128",
+    "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/character-factory.png",
+    "original_bytes": 572248,
+    "original_sha256": "a864724956329d1baf26496a6d2c9f43e2c8e4f4256c69daff98c7d9b6398c86",
+    "export_sha256": "a864724956329d1baf26496a6d2c9f43e2c8e4f4256c69daff98c7d9b6398c86",
+    "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/skills-overview.png",
+    "original_bytes": 515464,
+    "original_sha256": "3473e7c66c7ec3e7ec00f196e49b7bf63f750ac50e0440dac4260831bbdf8d02",
+    "export_sha256": "3473e7c66c7ec3e7ec00f196e49b7bf63f750ac50e0440dac4260831bbdf8d02",
+    "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/tfcc-qr.png",
+    "original_bytes": 4444,
+    "original_sha256": "6e47d364c009ebd4941189e35c82e44dc4205667f65df589de1d1ffbfeec03d2",
+    "export_sha256": "6e47d364c009ebd4941189e35c82e44dc4205667f65df589de1d1ffbfeec03d2",
+    "modified_in_export": false
+  }
+]

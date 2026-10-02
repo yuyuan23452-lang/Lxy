@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="color-scheme" content="light" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' pet: data:; media-src 'self' pet: blob:; script-src 'self'; style-src 'self'; connect-src 'self'"
+    />
+    <title>豆豆桌宠</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="app" aria-label="豆豆桌宠">
+      <section id="scene-layer" class="scene-layer" aria-hidden="true" hidden>
+        <video
+          id="scene-video"
+          class="scene-video"
+          muted
+          playsinline
+          preload="auto"
+        ></video>
+      </section>
+
+      <section id="pet-stage" class="pet-stage" aria-label="豆豆">
+        <div id="pet-shell" class="pet-shell">
+          <div class="hover-controls" aria-label="窗口控制">
+            <button
+              id="hide-button"
+              class="pet-control"
+              type="button"
+              title="隐藏到任务栏"
+              aria-label="隐藏到任务栏"
+            >
+              <span aria-hidden="true">—</span>
+            </button>
+            <button
+              id="close-button"
+              class="pet-control pet-control-close"
+              type="button"
+              title="关闭到通知区域"
+              aria-label="关闭到通知区域"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+
+          <div
+            id="pet-character"
+            class="pet-character"
+            role="button"
+            tabindex="0"
+            aria-label="豆豆。右键打开技能菜单，拖动可以移动豆豆。"
+          >
+            <img
+              id="idle-image"
+              class="idle-image"
+              src="assets/dog.png"
+              alt=""
+              draggable="false"
+            />
+            <video
+              id="idle-video"
+              class="idle-video"
+              muted
+              loop
+              playsinline
+              preload="auto"
+            ></video>
+            <video
+              id="skill-video"
+              class="skill-video"
+              muted
+              playsinline
+              preload="auto"
+            ></video>
+            <video
+              id="sleep-enter-video"
+              class="state-video"
+              muted
+              playsinline
+              preload="auto"
+            ></video>
+            <video
+              id="sleep-loop-video"
+              class="state-video"
+              muted
+              playsinline
+              preload="auto"
+            ></video>
+            <video
+              id="wake-video"
+              class="state-video"
+              muted
+              playsinline
+              preload="auto"
+            ></video>
+          </div>
+        </div>
+      </section>
+
+      <div id="message-bubble" class="message-bubble" role="status" aria-live="polite" hidden></div>
+      <div id="announcer" class="sr-only" aria-live="assertive"></div>
+    </main>
+    <script src="renderer.js"></script>
+  </body>
+</html>

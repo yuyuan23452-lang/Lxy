@@ -1,0 +1,47 @@
+{
+  "name": "tfcc-rehabilitation-desktop",
+  "version": "1.3.1",
+  "private": true,
+  "description": "TFCC 四阶段康复训练 Windows 离线桌面版",
+  "main": "main.cjs",
+  "scripts": {
+    "prepare:content": "node scripts/prepare-content.cjs",
+    "verify:content": "node scripts/verify-content.cjs",
+    "start": "electron .",
+    "layout": "node scripts/apply-desktop-layout.cjs",
+    "dist": "node scripts/apply-desktop-layout.cjs && node scripts/verify-content.cjs && electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "44.4.5",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "local.tfcc.rehabilitation",
+    "productName": "TFCC四阶段康复训练",
+    "artifactName": "TFCC四阶段康复训练-Windows-${version}-${arch}.${ext}",
+    "asar": true,
+    "files": [
+      "main.cjs",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "content",
+        "to": "content",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "icon": "assets/tfcc.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "directories": {
+      "output": "../build"
+    }
+  }
+}
