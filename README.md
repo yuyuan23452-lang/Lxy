@@ -4,14 +4,12 @@
 
 |项目|主要功能|说明|体验与下载|
 |---|---|---|---|
-|自动处理抖店草稿箱商品信息 Skill|主图生图、图文整理、保存草稿、批量接续|[功能说明](projects/doudian/README.md)|[安装 Skill](docs/SKILL-INSTALL.md) · [制作记录](docs/evidence/doudian.md)|
+|抖店草稿箱商品信息自动化编辑skill|主图生图、图文整理、保存草稿、批量接续|[功能说明](projects/doudian/README.md)|[安装 Skill](docs/SKILL-INSTALL.md) · [制作记录](docs/evidence/doudian.md)|
 |TFCC 四阶段训练应用|阶段导航、动作选择、独立播放与扫码网页|[功能与源码](projects/tfcc/README.md)|[网页体验](https://tfcc-rehab-training.myworkspace-5247.chatgpt.site) · [Windows 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02)|
 |豆豆桌宠与角色包工厂|桌面角色、技能素材、状态配置与素材准备|[功能与源码](projects/doudou/README.md)|[Windows 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02) · [工厂 Skill](skills/desktop-character-pack-factory)|
 |交互圣诞树|3D 粒子场景、手势切换与本地照片展示|[功能与原始 HTML](projects/christmas-tree/README.md)|下载后打开 [演示页](projects/christmas-tree/demo/index.html)|
 
 ## 项目预览
-
-![项目集预览](assets/screenshots/portfolio-desktop.png)
 
 从 [Releases 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02) `portfolio-preview.zip`，解压后打开 `index.html`，即可浏览项目汇总页、功能截图与制作记录。GitHub 的 HTML 文件页面显示源码；下载后在浏览器中打开才能运行。圣诞树演示需要联网加载外部库。
 
