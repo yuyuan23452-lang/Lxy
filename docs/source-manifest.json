@@ -759,7 +759,43 @@
     "file": "assets/screenshots/tfcc-qr.png",
     "original_bytes": 4444,
     "original_sha256": "6e47d364c009ebd4941189e35c82e44dc4205667f65df589de1d1ffbfeec03d2",
-    "export_sha256": "6e47d364c009ebd4941189e35c82e44dc4205667f65df589de1d1ffbfeec03d2",
+    "export_sha256": "9bf97694f8e6f22bc15d6fd65057c54434aea92dbf4b58e7ca0f566f7d28810d",
+    "modified_in_export": true,
+    "description": "固定 HTTPS 网页二维码，2026-10-03 重新生成；未使用临时本机地址或一次性令牌。"
+  },
+  {
+    "file": "assets/screenshots/tfcc-making-phase-1.png",
+    "original_bytes": 195332,
+    "original_sha256": "419b26e157beb3c181d9ad65bf57ac7d62d781d84cc88598d102d56dbd49a50d",
+    "export_sha256": "419b26e157beb3c181d9ad65bf57ac7d62d781d84cc88598d102d56dbd49a50d",
+    "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/tfcc-making-phase-2.png",
+    "original_bytes": 369375,
+    "original_sha256": "5e6963092c7883262cca6b366c7907961b3472e069549720c11dcc147b5cbae2",
+    "export_sha256": "5e6963092c7883262cca6b366c7907961b3472e069549720c11dcc147b5cbae2",
+    "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/tfcc-making-phase-3.png",
+    "original_bytes": 295778,
+    "original_sha256": "6079d0fb18167f53db9e06ccc3c808b08f53f8a51c8a82a87bdf7f7e283e166b",
+    "export_sha256": "6079d0fb18167f53db9e06ccc3c808b08f53f8a51c8a82a87bdf7f7e283e166b",
+    "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/tfcc-making-phase-4.png",
+    "original_bytes": 250244,
+    "original_sha256": "772b79bd9c45456c1f1f702619b69e6f920945fb46b7a8b694bbcb73292c09d2",
+    "export_sha256": "772b79bd9c45456c1f1f702619b69e6f920945fb46b7a8b694bbcb73292c09d2",
+    "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/tfcc-making-mobile.png",
+    "original_bytes": 188790,
+    "original_sha256": "42ea8462f650ffeb3e26dcc2210c9a12fa2faf0e7a79982f00ed72b07dfa6535",
+    "export_sha256": "42ea8462f650ffeb3e26dcc2210c9a12fa2faf0e7a79982f00ed72b07dfa6535",
     "modified_in_export": false
   }
 ]
