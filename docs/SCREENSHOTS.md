@@ -11,3 +11,4 @@
 
 - `tfcc-making-phase-1` 至 `tfcc-making-phase-4`、`tfcc-making-mobile`：2026-10-03 提供的实际制作截图，原图按字节复制。
 - `tfcc-qr`：固定 HTTPS 网页地址二维码，黑白高对比并保留完整白边；扫码入口与网页版共用线上网址。
+- `tfcc-making-desktop`：2026-10-03 补充的桌面软件开发截图，原图按字节复制。

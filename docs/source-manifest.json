@@ -797,5 +797,12 @@
     "original_sha256": "42ea8462f650ffeb3e26dcc2210c9a12fa2faf0e7a79982f00ed72b07dfa6535",
     "export_sha256": "42ea8462f650ffeb3e26dcc2210c9a12fa2faf0e7a79982f00ed72b07dfa6535",
     "modified_in_export": false
+  },
+  {
+    "file": "assets/screenshots/tfcc-making-desktop.png",
+    "original_bytes": 242971,
+    "original_sha256": "e0727fa94a7d6b271761d2f0e0d636ce3ab112743ed60922ad4d305712e9666f",
+    "export_sha256": "e0727fa94a7d6b271761d2f0e0d636ce3ab112743ed60922ad4d305712e9666f",
+    "modified_in_export": false
   }
 ]

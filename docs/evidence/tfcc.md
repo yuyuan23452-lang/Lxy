@@ -24,6 +24,12 @@
 
 完善阶段说明的界面细节，完成网页后提出桌面软件与手机端的后续开发需求。
 
+## TFCC桌面软件开发
+
+![TFCC桌面软件开发](../../assets/screenshots/tfcc-making-desktop.png)
+
+完成 Windows 桌面版 1.3.1 的完整性校验并保留源码与素材，随后交接手机端开发任务。
+
 ## TFCC手机扫码版开发
 
 ![TFCC手机扫码版开发](../../assets/screenshots/tfcc-making-mobile.png)
