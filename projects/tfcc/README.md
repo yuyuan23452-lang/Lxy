@@ -13,7 +13,7 @@
 
 ## 体验与下载
 
-- [网页版](https://tfcc-rehab-training.myworkspace-5247.chatgpt.site)
+- [网页版](https://luxinyuan-tfcc.netlify.app)
 - [下载window版](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/TFCC-Windows-1.3.1-x64.exe)
 - [查看源码与说明](https://github.com/yuyuan23452-lang/ai-project-portfolio/tree/main/projects/tfcc)
 - [手机版二维码](../../assets/screenshots/tfcc-qr.png)
