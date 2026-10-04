@@ -110,8 +110,8 @@
     <script>
         const version = new URLSearchParams(location.search).get('mode') || 'buttons';
         const mobile = version === 'mobile' || window.innerWidth < 650;
-        document.body.classList.toggle('gesture-version',version === 'gesture');
-        document.getElementById('demo-note').textContent = version === 'gesture' ? '点击开启摄像头后，用握拳、张开、单指、OK 手势切换效果。' : '点击按钮切换效果，拖动场景旋转；可导入自己的照片。';
+        document.body.classList.toggle('gesture-version',version !== 'buttons');
+        document.getElementById('demo-note').textContent = version !== 'buttons' ? '点击开启摄像头后，用握拳、张开、单指、OK 手势切换效果。' : '点击按钮切换效果，拖动场景旋转；可导入自己的照片。';
         // --- 1. 场景 ---
         const scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2(0x05101a, 0.0015);
@@ -388,11 +388,6 @@
             }else document.getElementById('demo-note').textContent='照片未能读取，请选择 JPG、PNG 或 WebP 图片重试。';
             e.target.value='';
         });
-        const sample=new THREE.TextureLoader().load('../../../assets/screenshots/doudou-desktop.png',texture=>{
-            if(importVersion){texture.dispose();return}
-            photoImages.push(texture);createGalleryCloud();
-        });
-
         // --- 7. 动画 ---
         const clock = new THREE.Clock();
         const dummyV = new THREE.Vector3();
@@ -589,7 +584,7 @@
                     } else {
                         const c=document.createElement('canvas');c.width=400;c.height=300;
                         const x=c.getContext('2d');x.fillStyle='#000';x.fillRect(0,0,400,300);
-                        x.fillStyle='#fff';x.font='30px Arial';x.textAlign='center';x.fillText("Please Upload Photos",200,150);
+                        x.fillStyle='#fff';x.font='26px sans-serif';x.textAlign='center';x.fillText("请先导入自己的照片",200,150);
                         photoPlane.material.map=new THREE.CanvasTexture(c);
                     }
                     break;
@@ -616,21 +611,54 @@
         renderer.domElement.addEventListener('pointermove',e=>{if(!pointer||pointer.id!==e.pointerId)return;handRot.x+=(e.clientX-pointer.x)*0.012;handRot.y=Math.max(-2,Math.min(2,handRot.y+(e.clientY-pointer.y)*0.008));pointer.x=e.clientX;pointer.y=e.clientY});
         ['pointerup','pointercancel'].forEach(type=>renderer.domElement.addEventListener(type,()=>pointer=null));
         async function loadLibrary(url){await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=url;script.onload=resolve;script.onerror=()=>{script.remove();reject(new Error('load failed'))};document.head.append(script)})}
-        document.getElementById('camera-enable').addEventListener('click',async function(){
-            this.disabled=true;
+        const cameraButton=document.getElementById('camera-enable');
+        let cameraSession=null;
+        function stopCamera(){
+            const session=cameraSession;cameraSession=null;
+            if(session){
+                clearTimeout(session.timer);
+                if(session.stream)session.stream.getTracks().forEach(track=>track.stop());
+                if(session.hands)Promise.resolve(session.task).catch(()=>{}).then(()=>session.hands.close()).catch(()=>{});
+            }
+            videoElement.srcObject=null;
+            cameraButton.disabled=false;cameraButton.textContent='开启摄像头手势';
+            statusText.style.display='none';
+        }
+        cameraButton.addEventListener('click',async function(){
+            if(cameraSession){stopCamera();document.getElementById('demo-note').textContent='摄像头已关闭，仍可点击按钮体验。';return}
+            const session={stream:null,hands:null,task:null,timer:null};cameraSession=session;
+            this.disabled=true;this.textContent='正在开启摄像头…';
             try {
-                if(!window.Hands)await loadLibrary('https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js');
-                if(!window.Camera)await loadLibrary('https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js');
-                const hands=new Hands({locateFile:f=>`https://cdn.jsdelivr.net/npm/@mediapipe/hands/${f}`});
-                hands.setOptions({maxNumHands:1,modelComplexity:1,minDetectionConfidence:0.5,minTrackingConfidence:0.5});
-                hands.onResults(onResults);
-                const cam=new Camera(videoElement,{onFrame:async()=>{await hands.send({image:videoElement})},width:320,height:240});
-                await cam.start();this.textContent='手势模式已开启';
+                if(!navigator.mediaDevices?.getUserMedia)throw new Error('CAMERA_UNAVAILABLE');
+                session.stream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:'user',width:{ideal:640},height:{ideal:480}}});
+                if(cameraSession!==session){session.stream.getTracks().forEach(t=>t.stop());return}
+                videoElement.srcObject=session.stream;await videoElement.play();
+                this.textContent='正在加载手势识别…';
+                if(!window.Hands)await loadLibrary('vendor/hands/hands.js');
+                if(cameraSession!==session)return;
+                const hands=new Hands({locateFile:f=>new URL('vendor/hands/'+f,location.href).href});session.hands=hands;
+                hands.setOptions({maxNumHands:1,modelComplexity:mobile?0:1,minDetectionConfidence:0.6,minTrackingConfidence:0.6});
+                hands.onResults(results=>{if(cameraSession===session)onResults(results)});
+                session.task=hands.initialize();await session.task;
+                if(cameraSession!==session)return;
+                this.disabled=false;this.textContent='关闭摄像头手势';
+                document.getElementById('demo-note').textContent='手势已开启：握拳聚合、张开散开、单指照片、OK 祝福语。';
+                async function frame(){
+                    if(cameraSession!==session)return;
+                    try{
+                        if(videoElement.readyState>=2){session.task=hands.send({image:videoElement});await session.task}
+                        if(cameraSession===session)session.timer=setTimeout(frame,mobile?80:40);
+                    }catch(error){if(cameraSession===session){stopCamera();document.getElementById('demo-note').textContent='手势识别暂停，请重新开启摄像头。'}}
+                }
+                frame();
             } catch(error) {
-                this.disabled=false;this.textContent='重试开启摄像头';
-                document.getElementById('demo-note').textContent='摄像头或手势模型未能启动；仍可使用四个按钮体验。';
+                if(cameraSession!==session)return;
+                stopCamera();
+                document.getElementById('demo-note').textContent=error.name==='NotAllowedError' ? '请在浏览器中允许摄像头权限后重试；也可以继续使用按钮。' : '摄像头或手势识别未能启动，请检查摄像头和网络后重试。';
             }
         });
+        window.addEventListener('pagehide',stopCamera);
+        document.addEventListener('visibilitychange',()=>{if(document.hidden)stopCamera()});
     </script>
 </body>
 </html>
