@@ -40,3 +40,7 @@
 - `christmas-making-inertia.png` SHA256: `7adf69783d3684fbed3d682d70c101ac984e0cc4c4747fbe2da2935de65f686c`
 
 - `christmas-making-photo.png` SHA256: `839ad56f85a918fa8aec89a5b84b04bc6c5439854f925ad8379a70b5882da687`
+
+- 抖店商品编辑skill：`doudian-prompt.png`，用户提供原图，未修改；SHA256 `ebf2fb874824f24c24c230db26428c3b575c1ccf96463d1dd83150356d155ef8`。
+
+- 抖店商品编辑skill：`doudian-invoke.jpg`，用户提供原图，未修改；SHA256 `d14f7a29f77efc9597fe64c8d293a678d4e359e08278f55d7f3b223198f28f26`。
