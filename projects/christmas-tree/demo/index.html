@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>交互圣诞树 · 作品集演示版</title>
+    <title>交互圣诞树</title>
     <style>
         body { 
             margin: 0; overflow: hidden; 
@@ -73,11 +73,12 @@
         #demo-note {font-size:12px;color:#e2cf9a;line-height:1.5;margin:0}
         @media(max-width:650px){#ui-container{top:auto;bottom:12px;left:12px;width:210px;padding:12px;gap:8px}#video-wrapper{display:none}#top-header h1{font-size:34px}#gesture-info{display:none}}
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="vendor/three.min.js"></script>
+    <style>
+    canvas{touch-action:none}#demo-controls button{min-height:44px}#demo-controls button[aria-pressed="true"]{background:#826817}
+    #input_video{playsinline:true}body:not(.gesture-version) #camera-enable,body:not(.gesture-version) #video-wrapper,body:not(.gesture-version) #gesture-info{display:none}
+    @media(max-width:650px){#ui-container{box-sizing:border-box;width:calc(100% - 24px);bottom:max(12px,env(safe-area-inset-bottom));max-height:42dvh;overflow:auto}#top-header h1{font-size:30px}#demo-controls{grid-template-columns:repeat(4,1fr);gap:6px}#demo-controls button{padding:9px 2px;font-size:13px}.file-upload{padding:8px}body.gesture-version #video-wrapper{display:block;height:90px}}
+    </style>
 </head>
 <body>
 
@@ -93,10 +94,10 @@
         <div id="demo-controls"><button data-mode="FIST">圣诞树</button><button data-mode="OPEN">漫天星云</button><button data-mode="POINTING">照片特写</button><button data-mode="OK">节日文字</button></div>
         <button id="camera-enable">开启摄像头手势</button>
         <div id="video-wrapper">
-            <video id="input_video"></video>
+            <video id="input_video" playsinline muted></video>
             <div id="status-text" class="status-badge">Ready</div>
         </div>
-        <label class="file-upload" for="photo-input">📷 导入多张照片 (建议10+)</label>
+        <label class="file-upload" for="photo-input">📷 导入照片</label>
         <input type="file" id="photo-input" accept="image/*" multiple>
         <div id="gesture-info">
             ✋ <b>张开</b>：漫天星云<br>
@@ -107,16 +108,21 @@
     </div>
 
     <script>
+        const version = new URLSearchParams(location.search).get('mode') || 'buttons';
+        const mobile = version === 'mobile' || window.innerWidth < 650;
+        document.body.classList.toggle('gesture-version',version === 'gesture');
+        document.getElementById('demo-note').textContent = version === 'gesture' ? '点击开启摄像头后，用握拳、张开、单指、OK 手势切换效果。' : '点击按钮切换效果，拖动场景旋转；可导入自己的照片。';
         // --- 1. 场景 ---
         const scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2(0x05101a, 0.0015);
 
         const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 85;
+        camera.position.z = mobile ? 135 : 85;
+        if(mobile) camera.setViewOffset(innerWidth,innerHeight,0,innerHeight*0.12,innerWidth,innerHeight);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, mobile ? 1.5 : 2));
         document.body.appendChild(renderer.domElement);
 
         // 灯光
@@ -141,7 +147,7 @@
             context.beginPath(); context.arc(32, 32, 30, 0, Math.PI * 2); context.fill();
             return new THREE.CanvasTexture(canvas);
         }
-        const snowCount = 800;
+        const snowCount = mobile ? 250 : 800;
         const snowGeo = new THREE.BufferGeometry();
         const snowPos = new Float32Array(snowCount * 3);
         for(let i=0;i<snowCount*3;i++) snowPos[i] = (Math.random()-0.5)*250;
@@ -154,8 +160,8 @@
         scene.add(snowSystem);
 
         // --- 3. 粒子系统 ---
-        const totalParticles = 2400;
-        const countCubes = 1100; const countSpheres = 600; const countFrames = 300; const countGifts = 400;
+        const countCubes = mobile ? 350 : 1100; const countSpheres = mobile ? 200 : 600; const countFrames = mobile ? 100 : 300; const countGifts = mobile ? 150 : 400;
+        const totalParticles = countCubes + countSpheres + countFrames + countGifts;
 
         const cubeGeo = new THREE.BoxGeometry(0.8, 0.8, 0.8);
         const sphereGeo = new THREE.SphereGeometry(0.6, 16, 16);
@@ -267,9 +273,10 @@
         // [新增] 生成照片星系
         function createGalleryCloud() {
             // 清空旧的
-            while(galleryGroup.children.length > 0){ 
-                galleryGroup.remove(galleryGroup.children[0]); 
-            }
+            const geometries=new Set(), materials=new Set();
+            galleryGroup.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material)materials.add(o.material)});
+            geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());
+            galleryGroup.clear();
 
             // 如果没照片，就不生成
             if(photoImages.length === 0) return;
@@ -358,31 +365,32 @@
         }
         calculateTargets('tree');
 
-        document.getElementById('photo-input').addEventListener('change', (e) => {
-            const f = e.target.files;
-            if(f.length){
-                photoImages = [];
-                // 增加上限到30张，方便生成星系
-                let loadCount = 0;
-                const limit = Math.min(f.length, 30);
-                
-                for(let i=0; i<limit; i++){
-                    const r = new FileReader();
-                    r.onload = (ev) => {
-                        const img = new Image(); img.src=ev.target.result;
-                        img.onload=()=>{
-                            const t=new THREE.CanvasTexture(img); t.colorSpace=THREE.SRGBColorSpace;
-                            photoImages.push(t);
-                            loadCount++;
-                            // 当所有图片加载完，重建Gallery
-                            if(loadCount === limit) {
-                                createGalleryCloud();
-                            }
-                        }
-                    };
-                    r.readAsDataURL(f[i]);
-                }
+        let importVersion=0;
+        document.getElementById('photo-input').addEventListener('change', async (e) => {
+            const selected=Array.from(e.target.files).slice(0,mobile?12:30);
+            if(!selected.length)return;
+            const batch=++importVersion, loaded=[];
+            for(const file of selected){
+                const url=URL.createObjectURL(file);
+                try{
+                    const img=await new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=reject;im.src=url});
+                    const scale=Math.min(1,1024/Math.max(img.width,img.height));
+                    const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));
+                    canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);
+                    const texture=new THREE.CanvasTexture(canvas);texture.encoding=THREE.sRGBEncoding;loaded.push(texture);
+                }catch(error){}finally{URL.revokeObjectURL(url)}
             }
+            if(batch!==importVersion){loaded.forEach(t=>t.dispose());return}
+            if(loaded.length){
+                const previous=photoImages;photoImages=loaded;photoPlane.material.map=loaded[0];photoPlane.material.needsUpdate=true;
+                createGalleryCloud();previous.forEach(t=>t.dispose());
+                document.getElementById('demo-note').textContent='已导入 '+loaded.length+' 张照片，点击照片特写查看。';
+            }else document.getElementById('demo-note').textContent='照片未能读取，请选择 JPG、PNG 或 WebP 图片重试。';
+            e.target.value='';
+        });
+        const sample=new THREE.TextureLoader().load('../../../assets/screenshots/doudou-desktop.png',texture=>{
+            if(importVersion){texture.dispose();return}
+            photoImages.push(texture);createGalleryCloud();
         });
 
         // --- 7. 动画 ---
@@ -526,6 +534,7 @@
 
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
+            if(mobile) camera.setViewOffset(innerWidth,innerHeight,0,innerHeight*0.12,innerWidth,innerHeight);
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
@@ -602,9 +611,16 @@
             lastG='';handleGesture(button.dataset.mode);
             document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
         }));
+        let pointer=null;
+        renderer.domElement.addEventListener('pointerdown',e=>{pointer={id:e.pointerId,x:e.clientX,y:e.clientY};renderer.domElement.setPointerCapture(e.pointerId)});
+        renderer.domElement.addEventListener('pointermove',e=>{if(!pointer||pointer.id!==e.pointerId)return;handRot.x+=(e.clientX-pointer.x)*0.012;handRot.y=Math.max(-2,Math.min(2,handRot.y+(e.clientY-pointer.y)*0.008));pointer.x=e.clientX;pointer.y=e.clientY});
+        ['pointerup','pointercancel'].forEach(type=>renderer.domElement.addEventListener(type,()=>pointer=null));
+        async function loadLibrary(url){await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=url;script.onload=resolve;script.onerror=()=>{script.remove();reject(new Error('load failed'))};document.head.append(script)})}
         document.getElementById('camera-enable').addEventListener('click',async function(){
             this.disabled=true;
             try {
+                if(!window.Hands)await loadLibrary('https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js');
+                if(!window.Camera)await loadLibrary('https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js');
                 const hands=new Hands({locateFile:f=>`https://cdn.jsdelivr.net/npm/@mediapipe/hands/${f}`});
                 hands.setOptions({maxNumHands:1,modelComplexity:1,minDetectionConfidence:0.5,minTrackingConfidence:0.5});
                 hands.onResults(onResults);

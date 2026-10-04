@@ -28,3 +28,15 @@
 - `doudou-making-characters.png`：原文件 `codex-clipboard-7a4bc98a-1c12-46f4-8b62-abd0da6bf46c.png`，SHA256 `ec251a9c08da54793a511f9a690a1e90c06dc583015f4168585264a5c3949dc0`。
 - `doudou-making-images.png`：原文件 `codex-clipboard-fdc9a3e3-90c2-4adc-ae02-6a2c4b71c974.png`，SHA256 `c767cfe2f9234ea456af1a176f8afe5315438250ab62f2702422b86144b4880e`。
 - `doudou-making-videos.png`：原文件 `codex-clipboard-aecd387e-ccab-4fbe-8d99-6fcacad59236.png`，SHA256 `761736a165ba6e008828b6b75581bb6ac087d3552c00567a78dacee6f583aa7a`。
+
+## 圣诞树 Gemini 制作记录（2026-10-04）
+
+用户提供的四张原始截图，直接复制，未修改截图内容。
+
+- `christmas-making-drag.png` SHA256: `0768a5366208ac541469b3c589e685811745de466da0961d54cc60739acbb099`
+
+- `christmas-making-direction.png` SHA256: `9aa8e803517dc4a2e0c58bc4498ab017b2907c5a89cbd9a945372e4bf9d132dd`
+
+- `christmas-making-inertia.png` SHA256: `7adf69783d3684fbed3d682d70c101ac984e0cc4c4747fbe2da2935de65f686c`
+
+- `christmas-making-photo.png` SHA256: `839ad56f85a918fa8aec89a5b84b04bc6c5439854f925ad8379a70b5882da687`
