@@ -44,3 +44,7 @@
 - 抖店商品编辑skill：`doudian-prompt.png`，用户提供原图，未修改；SHA256 `ebf2fb874824f24c24c230db26428c3b575c1ccf96463d1dd83150356d155ef8`。
 
 - 抖店商品编辑skill：`doudian-invoke.jpg`，用户提供原图，未修改；SHA256 `d14f7a29f77efc9597fe64c8d293a678d4e359e08278f55d7f3b223198f28f26`。
+
+- TFCC：`tfcc-pavo.png`，用户提供原始截图，未修改；SHA256 `43538ebc9551d96645b62eed906606adf856f7c1158a214fa61814b147ee80fd`。
+
+- TFCC：`tfcc-simple-web.png`，用户提供原始截图，未修改；SHA256 `1d7b83d9c56276b850f1169c54d4e8af3372db08b7ced153d5eb084ddba7211e`。
