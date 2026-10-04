@@ -7,8 +7,6 @@ Windows 应用 · 手机网页 · Pavo
 ![Pavo ai](../../assets/screenshots/tfcc-pavo.png)
 ![网页简单版](../../assets/screenshots/tfcc-simple-web.png)
 
-网页简单版仅展示截图，不新增该版本的网页文件。
-
 ## 项目介绍
 
 1. 先制定总任务，再按阶段拆分任务完成；每个阶段先制作说明，再制作动作动画。
