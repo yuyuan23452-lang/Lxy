@@ -6,7 +6,7 @@
 |---|---|---|---|
 |抖店草稿箱商品信息自动化编辑skill|主图生图、图文整理、保存草稿、批量接续|[功能说明](projects/doudian/README.md)|[安装 Skill](docs/SKILL-INSTALL.md) · [制作记录](docs/evidence/doudian.md)|
 |TFCC康复训练应用|阶段导航、动作选择、独立播放与扫码网页|[功能与源码](projects/tfcc/README.md)|[网页体验](https://luxinyuan-tfcc.netlify.app) · [Windows 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02)|
-|豆豆桌宠与角色包工厂|桌面角色、技能素材、状态配置与素材准备|[功能与源码](projects/doudou/README.md)|[Windows 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02) · [工厂 Skill](skills/desktop-character-pack-factory)|
+|AI桌面宠物|桌面角色、技能素材、状态配置与素材准备|[功能与源码](projects/doudou/README.md)|[Windows 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02) · [工厂 Skill](skills/desktop-character-pack-factory)|
 |交互圣诞树|3D 粒子场景、手势切换与本地照片展示|[功能与原始 HTML](projects/christmas-tree/README.md)|下载后打开 [演示页](projects/christmas-tree/demo/index.html)|
 
 ## 项目预览
@@ -30,3 +30,5 @@
 [版本与验证记录](docs/VERIFICATION.md) · [截图来源](docs/SCREENSHOTS.md)
 
 当前仓库为私有，查看与下载需要访问权限。第三方库和素材保留原有权利；本仓库尚未指定整包开源许可证。
+
+项目三补充：[WebM 转换器](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/Doudou-WebM-Converter.exe) · [制作记录](docs/evidence/doudou.md) · [原始需求文档](projects/doudou/records/小狗修改文案.doc)。

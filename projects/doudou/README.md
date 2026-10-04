@@ -1,45 +1,37 @@
-# 豆豆桌宠与桌面角色包工厂
+# AI桌面宠物
 
-Windows 桌面角色应用，当前归档版本 0.8.13。将角色、技能素材、待机/睡眠和开场播放配置化，配套 Skill 整理新角色前期素材。
+codex·可灵·剪映·webm·skill
 
-![角色管理](../../assets/screenshots/doudou-roles.png)
-![技能设置](../../assets/screenshots/doudou-skills.png)
-![角色包工厂Skill](../../assets/screenshots/character-factory.png)
+![设置界面](../../assets/screenshots/doudou-settings.png)
+![桌面界面](../../assets/screenshots/doudou-desktop.png)
+![可灵生成视频](../../assets/screenshots/doudou-kling.png)
+![剪映抠图](../../assets/screenshots/doudou-cutout.png)
+![webm转换器](../../assets/screenshots/doudou-webm.png)
+![角色包skill](../../assets/screenshots/character-factory.png)
 
-## 桌宠功能
+## 项目介绍
 
-|模块|实现内容|
-|---|---|
-|桌面角色|透明窗口、角色拖动、缩放、隐藏与托盘生命周期|
-|角色管理|宠物/人物/其他分类，角色创建、选择、默认角色与删除；各角色独立配置|
-|角色包|角色包导入导出及文件结构检查，方便迁移角色素材|
-|技能库|本地 WebM/MP4 导入、预览、分类、命名、静音与播放；透明技能和场景技能分开处理|
-|待机与睡眠|静态图/动画待机，无互动后睡眠与唤醒；随机行为可开关和配置|
-|开场方案|多片段管理、顺序与缩放设置，播放后返回角色待机状态|
+1. 使用 Codex 辅助开发应用、配套程序和 Skill，可灵生成动作视频，剪映完成抠图与后期处理。
+2. 打开应用后播放已设置的开场动画，结束后切换到当前角色的待机模式。
+3. 在设定时间内没有互动时，角色进入休息模式；鼠标触碰后唤醒，并恢复待机。
+4. 待机时可通过右键菜单互动，动作分为日常动作和场景动作；手势识别与语音识别作为后续扩展。
+5. 日常动作使用带透明通道的 WebM 动画，让角色直接出现在桌面；场景动作使用包含背景的 MP4 视频。
+6. 动作制作由 Codex 整理参考图和提示词，再用可灵生成视频，并在剪映中处理素材。
+7. 透明动画制作流程：可灵生成绿幕视频 → 剪映抠图并导出带 Alpha 通道的 MOV → 用 Codex 辅助制作的 WebM 转换器转为透明 WebM。
+8. 场景动画可直接使用处理好的 MP4 文件，导入应用后作为场景动作播放。
+9. 角色包制作流程：调用角色包工厂 Skill 准备透明角色图、参考图和动画提示词；完成动画后，将素材集中到文件夹，交由 Codex 继续整理、校验并打包为可导入的角色包。
+10. 支持宠物、人物和物品等角色的分类管理与切换；当前界面将物品归入“其他”分类。
 
-原目录早期 README 的 0.8.5 功能清单存在过期描述，本归档按 0.8.13 的源码与功能页面重新整理。摄像头识别表情、语音对话等早期设想不列为当前已交付功能。
+## 下载与源码
 
-## 配套：桌面角色包工厂 Skill
+- [下载 Windows 版](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/Doudou-Windows-0.8.13-x64.exe)
+- [下载 WebM 转换器](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/Doudou-WebM-Converter.exe) · [使用说明](tools/WEBM-CONVERTER.md)
+- [应用源码](source)
+- [角色包工厂 Skill](../../skills/desktop-character-pack-factory) · [安装说明](../../docs/SKILL-INSTALL.md)
+- [制作记录](../../docs/evidence/doudou.md) · [原始文档](records/小狗修改文案.doc)
 
-放在此项目下作为素材准备模块，也在仓库 `skills` 中提供可安装目录。用于复用角色素材准备流程。
+## 运行与复现
 
-1. 收集角色名称、分类、性格和原始参考图。
-2. 检查图片尺寸/透明信息并筛选参考图，保留原文件。
-3. 规划或生成统一风格的透明 PNG 标准图。
-4. 用脚本生成纯绿色参考底图，保持角色比例和位置。
-5. 整理动作规划、参考图使用方式与可灵提示词。
+当前应用归档版本为 0.8.13。进入 `source` 目录后运行 `pnpm install --frozen-lockfile`、`pnpm start`；打包使用 `pnpm run build:win`。
 
-该 Skill 负责第一阶段素材与提示词，不自动完成视频生成、抠像、WebM 转换或最终角色包导入。图像生成依赖相应工具，普通脚本不会自动调用付费生成服务。
-
-## 试用与复现
-
-- [下载 Windows 0.8.13](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02)，运行后从托盘或角色右键进入设置。
-- 源码位于 `source`；`pnpm install --frozen-lockfile`、`pnpm start`。
-- 测试：`pnpm run test:characters`；语法检查：`pnpm check`；打包：`pnpm run build:win`。
-- [角色包工厂源码](../../skills/desktop-character-pack-factory) / [Skill 安装方法](../../docs/SKILL-INSTALL.md)。
-
-## 开发说明
-
-本人确定桌宠使用场景和交互预期、选择与检查素材、反馈界面和动作效果，借助 Codex 逐步实现与封装应用。
-
-代码测试只能覆盖所测逻辑；Windows 透明窗口、媒体播放和完整系统兼容性仍需要实际运行观察。本次检查范围见 [验证记录](../../docs/VERIFICATION.md)。
+角色包工厂 Skill 提供角色图、参考图和提示词准备；后续视频制作、抠图、转换与最终角色包整理按项目流程分别完成。
