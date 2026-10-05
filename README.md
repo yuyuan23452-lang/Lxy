@@ -29,6 +29,4 @@
 
 [版本与验证记录](docs/VERIFICATION.md) · [截图来源](docs/SCREENSHOTS.md)
 
-当前仓库为私有，查看与下载需要访问权限。第三方库和素材保留原有权利；本仓库尚未指定整包开源许可证。
-
 项目三补充：[WebM 转换器](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/Doudou-WebM-Converter.exe) · [制作记录](docs/evidence/doudou.md) · [原始需求文档](projects/doudou/records/小狗修改文案.doc)。
