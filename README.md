@@ -4,10 +4,10 @@
 
 |项目|主要功能|说明|体验与下载|
 |---|---|---|---|
-|抖店商品编辑skill|主图生图、图文整理、价格库存与尺码表、保存草稿、批量接续|[功能说明](projects/doudian/README.md)|[安装 Skill](docs/SKILL-INSTALL.md) · [制作记录](docs/evidence/doudian.md)|
-|TFCC康复训练应用|阶段导航、动作选择、独立播放与扫码网页|[功能与源码](projects/tfcc/README.md)|[网页体验](https://luxinyuan-tfcc.netlify.app) · [Windows 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02)|
-|AI桌面宠物|桌面角色、技能素材、状态配置与素材准备|[功能与源码](projects/doudou/README.md)|[Windows 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02) · [工厂 Skill](skills/desktop-character-pack-factory)|
-|交互圣诞树|3D 粒子场景、手势切换与本地照片展示|[功能与原始 HTML](projects/christmas-tree/README.md)|下载后打开 [演示页](projects/christmas-tree/demo/index.html)|
+|抖店商品编辑skill|主图生图、图文整理、价格库存与尺码表、保存草稿、批量接续|[功能说明](projects/01-抖店商品编辑skill/README.md)|[安装 Skill](docs/SKILL-INSTALL.md) · [制作记录](docs/evidence/doudian.md)|
+|TFCC康复训练应用|阶段导航、动作选择、独立播放与扫码网页|[功能与源码](projects/03-TFCC康复训练应用/README.md)|[网页体验](https://luxinyuan-tfcc.netlify.app) · [Windows 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02)|
+|AI桌面宠物|桌面角色、技能素材、状态配置与素材准备|[功能与源码](projects/02-AI桌面宠物/README.md)|[Windows 下载](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02) · [工厂 Skill](skills/desktop-character-pack-factory)|
+|交互圣诞树|3D 粒子场景、手势切换与本地照片展示|[功能与原始 HTML](projects/04-交互圣诞树/README.md)|下载后打开 [演示页](projects/04-交互圣诞树/demo/index.html)|
 
 ## 项目预览
 
@@ -25,8 +25,8 @@
 - `assets/screenshots/`：功能界面及制作过程截图。
 - `scripts/`：Skill 安装与 TFCC 媒体准备脚本。
 
-较大的 Windows 程序和 TFCC 视频位于 Releases。`tfcc-media.zip` 在仓库根目录解压后，恢复 `projects/tfcc/desktop/content/` 下的视频；文件校验值见附件 `SHA256SUMS.txt`。
+较大的 Windows 程序和 TFCC 视频位于 Releases。`tfcc-media.zip` 在仓库根目录解压后，恢复 `projects/03-TFCC康复训练应用/desktop/content/` 下的视频；文件校验值见附件 `SHA256SUMS.txt`。
 
 [版本与验证记录](docs/VERIFICATION.md) · [截图来源](docs/SCREENSHOTS.md)
 
-项目三补充：[WebM 转换器](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/Doudou-WebM-Converter.exe) · [制作记录](docs/evidence/doudou.md) · [原始需求文档](projects/doudou/records/小狗修改文案.doc)。
+项目三补充：[WebM 转换器](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/Doudou-WebM-Converter.exe) · [制作记录](docs/evidence/doudou.md) · [原始需求文档](projects/02-AI桌面宠物/records/小狗修改文案.doc)。
