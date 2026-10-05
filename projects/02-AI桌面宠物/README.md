@@ -24,8 +24,8 @@ codex·可灵·剪映·webm·skill
 
 ## 下载与源码
 
-- [下载 Windows 版](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/Doudou-Windows-0.8.13-x64.exe)
-- [下载 WebM 转换器](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/Doudou-WebM-Converter.exe) · [使用说明](tools/WEBM-CONVERTER.md)
+- [下载 Windows 版](https://github.com/yuyuan23452-lang/Lxy/releases/download/lxy/Doudou-Windows-0.8.13-x64.exe)
+- [下载 WebM 转换器](https://github.com/yuyuan23452-lang/Lxy/releases/download/lxy/Doudou-WebM-Converter.exe) · [使用说明](tools/WEBM-CONVERTER.md)
 - [应用源码](source)
 - [角色包工厂 Skill](../../skills/desktop-character-pack-factory) · [安装说明](../../docs/SKILL-INSTALL.md)
 - [制作记录](../../docs/evidence/doudou.md) · [原始文档](records/小狗修改文案.doc)

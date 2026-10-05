@@ -17,8 +17,8 @@ Windows 应用 · 手机网页 · Pavo
 
 ## 体验与下载
 
-- [网页版](https://luxinyuan-tfcc.netlify.app)
-- [下载window版](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/TFCC-Windows-1.3.1-x64.exe)
+- [网页版](https://7j4tg7uj.qwenwork.host/)
+- [下载window版](https://github.com/yuyuan23452-lang/Lxy/releases/download/lxy/TFCC-Windows-1.3.1-x64.exe)
 - [查看源码与说明](https://github.com/yuyuan23452-lang/Lxy/tree/main/projects/03-TFCC康复训练应用)
 - [手机版二维码](../../assets/screenshots/tfcc-qr.png)
 

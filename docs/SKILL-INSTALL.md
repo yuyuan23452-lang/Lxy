@@ -2,7 +2,7 @@
 
 GitHub 链接用于查看和下载文件。把 Skill 安装到 Codex 后，才能在对话中调用；打开链接本身不会启动商品操作。
 
-本仓库目前为私有。接收者需要使用已获得仓库访问权限的 GitHub 账号；若看到 404，请先确认登录账号和访问权限。
+本仓库已公开，可直接查看源码和下载附件，无需申请仓库访问权限。
 
 ## 方法一：让 Codex 根据链接安装
 
@@ -10,15 +10,15 @@ GitHub 链接用于查看和下载文件。把 Skill 安装到 Codex 后，才�
 
 ```text
 请使用 $skill-installer 从以下 GitHub 目录安装 doudian-draft-graphics：
-https://github.com/yuyuan23452-lang/ai-project-portfolio/tree/main/skills/doudian-draft-graphics
+https://github.com/yuyuan23452-lang/Lxy/tree/main/skills/doudian-draft-graphics
 本次只安装并检查 Skill 能否被发现，不执行商品操作。
 ```
 
-读取私有仓库时，Codex 所在环境也需要自己的 GitHub 访问权限。无法直接下载时，可采用下面的手动方法。
+无法通过链接安装时，可采用下面的手动下载方法。
 
 ## 方法二：下载 ZIP 后手动复制（Windows）
 
-1. 打开 [项目 Releases](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/tag/portfolio-2026-10-02)，在 **Assets** 中下载 `codex-skills.zip`，右键“全部解压”。这个包中有三个 Skill，可只安装所需的一项。
+1. 打开 [项目 Releases](https://github.com/yuyuan23452-lang/Lxy/releases/tag/lxy)，在 **Assets** 中下载 `codex-skills.zip`，右键“全部解压”。这个包中有三个 Skill，可只安装所需的一项。
 2. 打开解压文件夹中的 `skills`，找到 `doudian-draft-graphics`。确认该文件夹里能看到 `SKILL.md`、`agents` 和 `scripts`。
 3. 在文件资源管理器地址栏输入 `%USERPROFILE%` 并回车。在自己的用户目录下创建 `.agents` 文件夹，再在里面创建 `skills` 文件夹（已存在则直接使用）。
 4. 将完整的 `doudian-draft-graphics` 文件夹复制到 `.agents/skills/` 中。最终结构应如下，避免多套一层文件夹：

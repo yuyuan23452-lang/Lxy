@@ -2,7 +2,7 @@
 
 将剪映导出的带 Alpha 透明通道的 MOV 转为桌面宠物可播放的 VP9 WebM。
 
-[下载 Windows 程序](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/Doudou-WebM-Converter.exe)
+[下载 Windows 程序](https://github.com/yuyuan23452-lang/Lxy/releases/download/lxy/Doudou-WebM-Converter.exe)
 
 1. 在剪映中完成抠图，导出保留 Alpha 通道的 MOV 文件。
 2. 打开转换工具，选择输入视频和输出位置。

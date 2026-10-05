@@ -30,7 +30,7 @@ skill提示词
 
 ## 安装与使用
 
-- [下载 Skill 安装包](https://github.com/yuyuan23452-lang/ai-project-portfolio/releases/download/portfolio-2026-10-02/codex-skills.zip)
+- [下载 Skill 安装包](https://github.com/yuyuan23452-lang/Lxy/releases/download/lxy/codex-skills.zip)
 - [逐步安装说明](../../docs/SKILL-INSTALL.md)
 - [查看 Skill 源码](../../skills/doudian-draft-graphics)
 
